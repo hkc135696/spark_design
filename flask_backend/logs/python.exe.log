@@ -1,0 +1,1250 @@
+D:\anaconda3\envs\spark\python.exe: can't open file 'D:\\Projects\\sparkDesign\\flask_backend\\data_generator\\traffic_simulator.py': [Errno 2] No such file or directory
+D:\anaconda3\envs\spark\python.exe: can't open file 'D:\\Projects\\sparkDesign\\flask_backend\\data_generator\\traffic_simulator.py': [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "D:\Projects\sparkDesign\data_generator\traffic_simulator.py", line 15, in <module>
+    from config import KAFKA_BOOTSTRAP_SERVERS, KAFKA_TOPIC_RAW
+ImportError: cannot import name 'KAFKA_BOOTSTRAP_SERVERS' from 'config' (D:\Projects\sparkDesign\flask_backend\.\config.py)
+Traceback (most recent call last):
+  File "D:\Projects\sparkDesign\data_generator\traffic_simulator.py", line 15, in <module>
+    from config import KAFKA_BOOTSTRAP_SERVERS, KAFKA_TOPIC_RAW
+ImportError: cannot import name 'KAFKA_BOOTSTRAP_SERVERS' from 'config' (D:\Projects\sparkDesign\flask_backend\.\config.py)
+Traceback (most recent call last):
+  File "D:\Projects\sparkDesign\data_generator\traffic_simulator.py", line 15, in <module>
+    from config import KAFKA_BOOTSTRAP_SERVERS, KAFKA_TOPIC_RAW
+ImportError: cannot import name 'KAFKA_BOOTSTRAP_SERVERS' from 'config' (D:\Projects\sparkDesign\flask_backend\.\config.py)
+Traceback (most recent call last):
+  File "D:\Projects\sparkDesign\data_generator\traffic_simulator.py", line 15, in <module>
+    from config import KAFKA_BOOTSTRAP_SERVERS, KAFKA_TOPIC_RAW
+ImportError: cannot import name 'KAFKA_BOOTSTRAP_SERVERS' from 'config' (D:\Projects\sparkDesign\flask_backend\.\config.py)
+Traceback (most recent call last):
+  File "D:\Projects\sparkDesign\data_generator\traffic_simulator.py", line 15, in <module>
+    from config import KAFKA_BOOTSTRAP_SERVERS, KAFKA_TOPIC_RAW
+ImportError: cannot import name 'KAFKA_BOOTSTRAP_SERVERS' from 'config' (D:\Projects\sparkDesign\flask_backend\.\config.py)
+Traceback (most recent call last):
+  File "D:\Projects\sparkDesign\data_generator\traffic_simulator.py", line 15, in <module>
+    from config import KAFKA_BOOTSTRAP_SERVERS, KAFKA_TOPIC_RAW
+ImportError: cannot import name 'KAFKA_BOOTSTRAP_SERVERS' from 'config' (D:\Projects\sparkDesign\flask_backend\.\config.py)
+Traceback (most recent call last):
+  File "D:\Projects\sparkDesign\data_generator\traffic_simulator.py", line 15, in <module>
+    from config import KAFKA_BOOTSTRAP_SERVERS, KAFKA_TOPIC_RAW
+ImportError: cannot import name 'KAFKA_BOOTSTRAP_SERVERS' from 'config' (D:\Projects\sparkDesign\flask_backend\.\config.py)
+Traceback (most recent call last):
+  File "D:\Projects\sparkDesign\data_generator\traffic_simulator.py", line 15, in <module>
+    from config import KAFKA_BOOTSTRAP_SERVERS, KAFKA_TOPIC_RAW
+ImportError: cannot import name 'KAFKA_BOOTSTRAP_SERVERS' from 'config' (D:\Projects\sparkDesign\flask_backend\.\config.py)
+%3|1779848064.013|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2024ms in state CONNECT)
+%3|1779848066.319|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2055ms in state CONNECT, 1 identical error(s) suppressed)
+[模拟器] 启动，连接 Kafka: 127.0.0.1:9092
+[模拟器] 目标 Topic: traffic-raw-data
+[模拟器] 共加载 106 个检测器，每 5 秒发送一批数据...
+[模拟器] 按 Ctrl+C 停止
+
+[10:24:16] 发送 50 条数据到 traffic-raw-data
+[10:24:21] 发送 50 条数据到 traffic-raw-data
+[10:24:26] 发送 50 条数据到 traffic-raw-data
+[10:24:31] 发送 50 条数据到 traffic-raw-data
+[10:24:37] 发送 50 条数据到 traffic-raw-data
+[10:24:42] 发送 50 条数据到 traffic-raw-data
+[10:24:47] 发送 50 条数据到 traffic-raw-data
+[10:24:52] 发送 50 条数据到 traffic-raw-data
+
+[模拟器] 已停止
+%3|1779848786.867|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2055ms in state CONNECT)
+%3|1779848789.125|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2058ms in state CONNECT, 1 identical error(s) suppressed)
+%3|1779849069.913|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2051ms in state CONNECT)
+%3|1779849253.568|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2032ms in state CONNECT)
+%3|1779849255.838|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2053ms in state CONNECT, 1 identical error(s) suppressed)
+[模拟器] 启动，连接 Kafka: 127.0.0.1:9092
+[模拟器] 目标 Topic: traffic-raw-data
+[模拟器] 共加载 106 个检测器，每 5 秒发送一批数据...
+[模拟器] 按 Ctrl+C 停止
+
+[10:34:11] 发送 50 条数据到 traffic-raw-data
+[10:34:20] 发送 50 条数据到 traffic-raw-data
+[10:34:25] 发送 50 条数据到 traffic-raw-data
+[10:34:30] 发送 50 条数据到 traffic-raw-data
+[10:34:35] 发送 50 条数据到 traffic-raw-data
+[10:34:40] 发送 50 条数据到 traffic-raw-data
+[10:34:45] 发送 50 条数据到 traffic-raw-data
+[10:34:50] 发送 50 条数据到 traffic-raw-data
+[10:34:55] 发送 50 条数据到 traffic-raw-data
+[10:35:01] 发送 50 条数据到 traffic-raw-data
+[10:35:06] 发送 50 条数据到 traffic-raw-data
+[10:35:11] 发送 50 条数据到 traffic-raw-data
+[10:35:16] 发送 50 条数据到 traffic-raw-data
+[10:35:21] 发送 50 条数据到 traffic-raw-data
+[10:35:26] 发送 50 条数据到 traffic-raw-data
+[10:35:31] 发送 50 条数据到 traffic-raw-data
+[10:35:36] 发送 50 条数据到 traffic-raw-data
+[10:35:41] 发送 50 条数据到 traffic-raw-data
+[10:35:46] 发送 50 条数据到 traffic-raw-data
+[10:35:51] 发送 50 条数据到 traffic-raw-data
+[10:35:56] 发送 50 条数据到 traffic-raw-data
+[10:36:01] 发送 50 条数据到 traffic-raw-data
+[10:36:06] 发送 50 条数据到 traffic-raw-data
+[10:36:11] 发送 50 条数据到 traffic-raw-data
+[10:36:16] 发送 50 条数据到 traffic-raw-data
+[10:36:21] 发送 50 条数据到 traffic-raw-data
+[10:36:26] 发送 50 条数据到 traffic-raw-data
+[10:36:31] 发送 50 条数据到 traffic-raw-data
+[10:36:36] 发送 50 条数据到 traffic-raw-data
+
+[模拟器] 已停止
+%3|1779849926.480|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2044ms in state CONNECT)
+[模拟器] 启动，连接 Kafka: 127.0.0.1:9092
+[模拟器] 目标 Topic: traffic-raw-data
+[模拟器] 共加载 106 个检测器，每 5 秒发送一批数据...
+[模拟器] 按 Ctrl+C 停止
+
+[10:45:24] 发送 50 条数据到 traffic-raw-data
+[10:45:31] 发送 50 条数据到 traffic-raw-data
+[10:45:36] 发送 50 条数据到 traffic-raw-data
+[10:45:41] 发送 50 条数据到 traffic-raw-data
+[10:45:46] 发送 50 条数据到 traffic-raw-data
+[10:45:51] 发送 50 条数据到 traffic-raw-data
+[10:45:56] 发送 50 条数据到 traffic-raw-data
+[10:46:01] 发送 50 条数据到 traffic-raw-data
+[10:46:06] 发送 50 条数据到 traffic-raw-data
+[10:46:11] 发送 50 条数据到 traffic-raw-data
+[10:46:17] 发送 50 条数据到 traffic-raw-data
+[10:46:22] 发送 50 条数据到 traffic-raw-data
+[10:46:27] 发送 50 条数据到 traffic-raw-data
+[10:46:32] 发送 50 条数据到 traffic-raw-data
+[10:46:37] 发送 50 条数据到 traffic-raw-data
+[10:46:42] 发送 50 条数据到 traffic-raw-data
+[10:46:47] 发送 50 条数据到 traffic-raw-data
+[10:46:52] 发送 50 条数据到 traffic-raw-data
+[10:46:57] 发送 50 条数据到 traffic-raw-data
+[10:47:02] 发送 50 条数据到 traffic-raw-data
+[10:47:07] 发送 50 条数据到 traffic-raw-data
+[10:47:12] 发送 50 条数据到 traffic-raw-data
+
+[模拟器] 已停止
+%3|1779850466.781|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2028ms in state CONNECT)
+[模拟器] 启动，连接 Kafka: 127.0.0.1:9092
+[模拟器] 目标 Topic: traffic-raw-data
+[模拟器] 共加载 106 个检测器，每 5 秒发送一批数据...
+[模拟器] 按 Ctrl+C 停止
+
+[10:54:24] 发送 50 条数据到 traffic-raw-data
+[10:54:31] 发送 50 条数据到 traffic-raw-data
+[10:54:36] 发送 50 条数据到 traffic-raw-data
+[10:54:42] 发送 50 条数据到 traffic-raw-data
+[10:54:47] 发送 50 条数据到 traffic-raw-data
+[10:54:52] 发送 50 条数据到 traffic-raw-data
+[10:54:57] 发送 50 条数据到 traffic-raw-data
+[10:55:02] 发送 50 条数据到 traffic-raw-data
+[10:55:07] 发送 50 条数据到 traffic-raw-data
+[10:55:12] 发送 50 条数据到 traffic-raw-data
+[10:55:17] 发送 50 条数据到 traffic-raw-data
+[10:55:22] 发送 50 条数据到 traffic-raw-data
+[10:55:27] 发送 50 条数据到 traffic-raw-data
+[10:55:32] 发送 50 条数据到 traffic-raw-data
+
+[模拟器] 已停止
+%3|1779851357.773|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2047ms in state CONNECT)
+%3|1779851360.014|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2036ms in state CONNECT, 1 identical error(s) suppressed)
+[模拟器] 启动，连接 Kafka: 127.0.0.1:9092
+[模拟器] 目标 Topic: traffic-raw-data
+[模拟器] 共加载 106 个检测器，每 5 秒发送一批数据...
+[模拟器] 按 Ctrl+C 停止
+
+[11:09:15] 发送 50 条数据到 traffic-raw-data
+[11:09:28] 发送 50 条数据到 traffic-raw-data
+[11:09:33] 发送 50 条数据到 traffic-raw-data
+[11:09:38] 发送 50 条数据到 traffic-raw-data
+[11:09:43] 发送 50 条数据到 traffic-raw-data
+[11:09:48] 发送 50 条数据到 traffic-raw-data
+[11:09:53] 发送 50 条数据到 traffic-raw-data
+[11:09:58] 发送 50 条数据到 traffic-raw-data
+[11:10:03] 发送 50 条数据到 traffic-raw-data
+[11:10:08] 发送 50 条数据到 traffic-raw-data
+[11:10:13] 发送 50 条数据到 traffic-raw-data
+[11:10:18] 发送 50 条数据到 traffic-raw-data
+[11:10:23] 发送 50 条数据到 traffic-raw-data
+[11:10:28] 发送 50 条数据到 traffic-raw-data
+[11:10:33] 发送 50 条数据到 traffic-raw-data
+[11:10:38] 发送 50 条数据到 traffic-raw-data
+[11:10:43] 发送 50 条数据到 traffic-raw-data
+
+[模拟器] 已停止
+%3|1779854015.148|FAIL|rdkafka#producer-1| [thrd:127.0.0.1:9092/bootstrap]: 127.0.0.1:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Unknown error (after 2018ms in state CONNECT)
+%3|1779854017.235|FAIL|rdkafka#producer-1| [thrd:127.0.0.1:9092/bootstrap]: 127.0.0.1:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Unknown error (after 2025ms in state CONNECT, 1 identical error(s) suppressed)
+%3|1779854048.093|FAIL|rdkafka#producer-1| [thrd:127.0.0.1:9092/bootstrap]: 127.0.0.1:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Unknown error (after 2048ms in state CONNECT, 13 identical error(s) suppressed)
+%3|1779854078.855|FAIL|rdkafka#producer-1| [thrd:127.0.0.1:9092/bootstrap]: 127.0.0.1:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Unknown error (after 2045ms in state CONNECT, 13 identical error(s) suppressed)
+%3|1779854109.228|FAIL|rdkafka#producer-1| [thrd:127.0.0.1:9092/bootstrap]: 127.0.0.1:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Unknown error (after 2051ms in state CONNECT, 13 identical error(s) suppressed)
+%3|1779854140.020|FAIL|rdkafka#producer-1| [thrd:127.0.0.1:9092/bootstrap]: 127.0.0.1:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Unknown error (after 2038ms in state CONNECT, 13 identical error(s) suppressed)
+%3|1779854170.773|FAIL|rdkafka#producer-1| [thrd:127.0.0.1:9092/bootstrap]: 127.0.0.1:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Unknown error (after 2035ms in state CONNECT, 13 identical error(s) suppressed)
+%3|1779854201.111|FAIL|rdkafka#producer-1| [thrd:127.0.0.1:9092/bootstrap]: 127.0.0.1:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Unknown error (after 2036ms in state CONNECT, 13 identical error(s) suppressed)
+%3|1779854231.932|FAIL|rdkafka#producer-1| [thrd:127.0.0.1:9092/bootstrap]: 127.0.0.1:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Unknown error (after 2056ms in state CONNECT, 13 identical error(s) suppressed)
+%3|1779854262.597|FAIL|rdkafka#producer-1| [thrd:127.0.0.1:9092/bootstrap]: 127.0.0.1:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Unknown error (after 2026ms in state CONNECT, 13 identical error(s) suppressed)
+%3|1779854292.947|FAIL|rdkafka#producer-1| [thrd:127.0.0.1:9092/bootstrap]: 127.0.0.1:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Unknown error (after 2027ms in state CONNECT, 13 identical error(s) suppressed)
+[模拟器] 启动，连接 Kafka: 127.0.0.1:9092
+[模拟器] 目标 Topic: traffic-raw-data
+[模拟器] 共加载 106 个检测器，每 5 秒发送一批数据...
+[模拟器] 按 Ctrl+C 停止
+
+
+[模拟器] 已停止
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+[发送失败] KafkaError{code=_MSG_TIMED_OUT,val=-192,str="Local: Message timed out"}
+%3|1779855129.634|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2018ms in state CONNECT)
+%3|1779855131.829|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2019ms in state CONNECT, 1 identical error(s) suppressed)
+%3|1779856921.433|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2030ms in state CONNECT)
+[模拟器] 启动，连接 Kafka: 127.0.0.1:9092
+[模拟器] 目标 Topic: traffic-raw-data
+[模拟器] 共加载 106 个检测器，每 5 秒发送一批数据...
+[模拟器] 按 Ctrl+C 停止
+
+[13:05:51] 发送 50 条数据到 traffic-raw-data
+[13:05:56] 发送 50 条数据到 traffic-raw-data
+[13:06:01] 发送 50 条数据到 traffic-raw-data
+[13:06:06] 发送 50 条数据到 traffic-raw-data
+[13:06:11] 发送 50 条数据到 traffic-raw-data
+[13:06:17] 发送 50 条数据到 traffic-raw-data
+[13:06:22] 发送 50 条数据到 traffic-raw-data
+[13:06:27] 发送 50 条数据到 traffic-raw-data
+[13:06:32] 发送 50 条数据到 traffic-raw-data
+[13:06:37] 发送 50 条数据到 traffic-raw-data
+[13:06:42] 发送 50 条数据到 traffic-raw-data
+[13:06:47] 发送 50 条数据到 traffic-raw-data
+
+[模拟器] 已停止
+%3|1779858439.387|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2040ms in state CONNECT)
+%3|1779858441.646|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2023ms in state CONNECT, 1 identical error(s) suppressed)
+[模拟器] 启动，连接 Kafka: 127.0.0.1:9092
+[模拟器] 目标 Topic: traffic-raw-data
+[模拟器] 共加载 106 个检测器，每 5 秒发送一批数据...
+[模拟器] 按 Ctrl+C 停止
+
+[13:12:02] 发送 50 条数据到 traffic-raw-data
+[13:12:08] 发送 50 条数据到 traffic-raw-data
+[13:12:13] 发送 50 条数据到 traffic-raw-data
+[13:12:18] 发送 50 条数据到 traffic-raw-data
+[13:12:23] 发送 50 条数据到 traffic-raw-data
+[13:12:28] 发送 50 条数据到 traffic-raw-data
+[13:12:33] 发送 50 条数据到 traffic-raw-data
+[13:12:38] 发送 50 条数据到 traffic-raw-data
+[13:12:43] 发送 50 条数据到 traffic-raw-data
+[13:12:48] 发送 50 条数据到 traffic-raw-data
+[13:12:53] 发送 50 条数据到 traffic-raw-data
+[13:12:58] 发送 50 条数据到 traffic-raw-data
+[13:13:03] 发送 50 条数据到 traffic-raw-data
+[13:13:08] 发送 50 条数据到 traffic-raw-data
+[13:13:13] 发送 50 条数据到 traffic-raw-data
+[13:13:18] 发送 50 条数据到 traffic-raw-data
+[13:13:23] 发送 50 条数据到 traffic-raw-data
+[13:13:28] 发送 50 条数据到 traffic-raw-data
+
+[模拟器] 已停止
+%3|1779859066.859|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2026ms in state CONNECT)
+%3|1779860339.399|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2026ms in state CONNECT)
+%3|1779860828.580|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2019ms in state CONNECT)
+%3|1779860830.824|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2021ms in state CONNECT, 1 identical error(s) suppressed)
+%3|1779861889.744|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2018ms in state CONNECT)
+%3|1779861892.053|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2026ms in state CONNECT, 1 identical error(s) suppressed)
+[模拟器] 启动，连接 Kafka: 127.0.0.1:9092
+[模拟器] 目标 Topic: traffic-raw-data
+[模拟器] 共加载 106 个检测器，每 5 秒发送一批数据...
+[模拟器] 按 Ctrl+C 停止
+
+[14:04:47] 发送 50 条数据到 traffic-raw-data
+[14:04:57] 发送 50 条数据到 traffic-raw-data
+[14:05:02] 发送 50 条数据到 traffic-raw-data
+[14:05:07] 发送 50 条数据到 traffic-raw-data
+[14:05:12] 发送 50 条数据到 traffic-raw-data
+[14:05:17] 发送 50 条数据到 traffic-raw-data
+[14:05:22] 发送 50 条数据到 traffic-raw-data
+[14:05:27] 发送 50 条数据到 traffic-raw-data
+[14:05:32] 发送 50 条数据到 traffic-raw-data
+[14:05:37] 发送 50 条数据到 traffic-raw-data
+[14:05:42] 发送 50 条数据到 traffic-raw-data
+[14:05:47] 发送 50 条数据到 traffic-raw-data
+[14:05:52] 发送 50 条数据到 traffic-raw-data
+[14:05:57] 发送 50 条数据到 traffic-raw-data
+[14:06:02] 发送 50 条数据到 traffic-raw-data
+[14:06:07] 发送 50 条数据到 traffic-raw-data
+[14:06:12] 发送 50 条数据到 traffic-raw-data
+[14:06:17] 发送 50 条数据到 traffic-raw-data
+[14:06:22] 发送 50 条数据到 traffic-raw-data
+[14:06:27] 发送 50 条数据到 traffic-raw-data
+[14:06:32] 发送 50 条数据到 traffic-raw-data
+[14:06:37] 发送 50 条数据到 traffic-raw-data
+[14:06:42] 发送 50 条数据到 traffic-raw-data
+[14:06:47] 发送 50 条数据到 traffic-raw-data
+[14:06:53] 发送 50 条数据到 traffic-raw-data
+[14:06:58] 发送 50 条数据到 traffic-raw-data
+[14:07:03] 发送 50 条数据到 traffic-raw-data
+[14:07:08] 发送 50 条数据到 traffic-raw-data
+[14:07:13] 发送 50 条数据到 traffic-raw-data
+[14:07:18] 发送 50 条数据到 traffic-raw-data
+[14:07:23] 发送 50 条数据到 traffic-raw-data
+[14:07:28] 发送 50 条数据到 traffic-raw-data
+[14:07:33] 发送 50 条数据到 traffic-raw-data
+[14:07:38] 发送 50 条数据到 traffic-raw-data
+[14:07:43] 发送 50 条数据到 traffic-raw-data
+[14:07:48] 发送 50 条数据到 traffic-raw-data
+[14:07:53] 发送 50 条数据到 traffic-raw-data
+[14:07:58] 发送 50 条数据到 traffic-raw-data
+[14:08:03] 发送 50 条数据到 traffic-raw-data
+[14:08:08] 发送 50 条数据到 traffic-raw-data
+[14:08:13] 发送 50 条数据到 traffic-raw-data
+[14:08:18] 发送 50 条数据到 traffic-raw-data
+[14:08:23] 发送 50 条数据到 traffic-raw-data
+[14:08:28] 发送 50 条数据到 traffic-raw-data
+[14:08:33] 发送 50 条数据到 traffic-raw-data
+[14:08:38] 发送 50 条数据到 traffic-raw-data
+[14:08:43] 发送 50 条数据到 traffic-raw-data
+[14:08:48] 发送 50 条数据到 traffic-raw-data
+[14:08:53] 发送 50 条数据到 traffic-raw-data
+[14:08:58] 发送 50 条数据到 traffic-raw-data
+[14:09:04] 发送 50 条数据到 traffic-raw-data
+[14:09:09] 发送 50 条数据到 traffic-raw-data
+[14:09:14] 发送 50 条数据到 traffic-raw-data
+[14:09:19] 发送 50 条数据到 traffic-raw-data
+[14:09:24] 发送 50 条数据到 traffic-raw-data
+[14:09:29] 发送 50 条数据到 traffic-raw-data
+[14:09:34] 发送 50 条数据到 traffic-raw-data
+[14:09:39] 发送 50 条数据到 traffic-raw-data
+[14:09:44] 发送 50 条数据到 traffic-raw-data
+[14:09:49] 发送 50 条数据到 traffic-raw-data
+[14:09:54] 发送 50 条数据到 traffic-raw-data
+[14:09:59] 发送 50 条数据到 traffic-raw-data
+[14:10:04] 发送 50 条数据到 traffic-raw-data
+[14:10:09] 发送 50 条数据到 traffic-raw-data
+[14:10:14] 发送 50 条数据到 traffic-raw-data
+[14:10:19] 发送 50 条数据到 traffic-raw-data
+[14:10:24] 发送 50 条数据到 traffic-raw-data
+[14:10:29] 发送 50 条数据到 traffic-raw-data
+[14:10:34] 发送 50 条数据到 traffic-raw-data
+[14:10:39] 发送 50 条数据到 traffic-raw-data
+[14:10:44] 发送 50 条数据到 traffic-raw-data
+[14:10:49] 发送 50 条数据到 traffic-raw-data
+[14:10:54] 发送 50 条数据到 traffic-raw-data
+[14:10:59] 发送 50 条数据到 traffic-raw-data
+[14:11:04] 发送 50 条数据到 traffic-raw-data
+[14:11:09] 发送 50 条数据到 traffic-raw-data
+[14:11:14] 发送 50 条数据到 traffic-raw-data
+[14:11:19] 发送 50 条数据到 traffic-raw-data
+[14:11:24] 发送 50 条数据到 traffic-raw-data
+[14:11:29] 发送 50 条数据到 traffic-raw-data
+[14:11:34] 发送 50 条数据到 traffic-raw-data
+[14:11:39] 发送 50 条数据到 traffic-raw-data
+[14:11:44] 发送 50 条数据到 traffic-raw-data
+[14:11:49] 发送 50 条数据到 traffic-raw-data
+[14:11:54] 发送 50 条数据到 traffic-raw-data
+[14:11:59] 发送 50 条数据到 traffic-raw-data
+[14:12:04] 发送 50 条数据到 traffic-raw-data
+[14:12:09] 发送 50 条数据到 traffic-raw-data
+[14:12:14] 发送 50 条数据到 traffic-raw-data
+[14:12:19] 发送 50 条数据到 traffic-raw-data
+[14:12:24] 发送 50 条数据到 traffic-raw-data
+[14:12:29] 发送 50 条数据到 traffic-raw-data
+[14:12:34] 发送 50 条数据到 traffic-raw-data
+[14:12:39] 发送 50 条数据到 traffic-raw-data
+[14:12:44] 发送 50 条数据到 traffic-raw-data
+[14:12:49] 发送 50 条数据到 traffic-raw-data
+[14:12:54] 发送 50 条数据到 traffic-raw-data
+[14:12:59] 发送 50 条数据到 traffic-raw-data
+[14:13:05] 发送 50 条数据到 traffic-raw-data
+[14:13:10] 发送 50 条数据到 traffic-raw-data
+[14:13:15] 发送 50 条数据到 traffic-raw-data
+[14:13:20] 发送 50 条数据到 traffic-raw-data
+[14:13:25] 发送 50 条数据到 traffic-raw-data
+[14:13:30] 发送 50 条数据到 traffic-raw-data
+[14:13:35] 发送 50 条数据到 traffic-raw-data
+[14:13:40] 发送 50 条数据到 traffic-raw-data
+[14:13:45] 发送 50 条数据到 traffic-raw-data
+[14:13:50] 发送 50 条数据到 traffic-raw-data
+[14:13:55] 发送 50 条数据到 traffic-raw-data
+[14:14:00] 发送 50 条数据到 traffic-raw-data
+[14:14:05] 发送 50 条数据到 traffic-raw-data
+[14:14:10] 发送 50 条数据到 traffic-raw-data
+[14:14:15] 发送 50 条数据到 traffic-raw-data
+[14:14:20] 发送 50 条数据到 traffic-raw-data
+[14:14:25] 发送 50 条数据到 traffic-raw-data
+[14:14:30] 发送 50 条数据到 traffic-raw-data
+[14:14:35] 发送 50 条数据到 traffic-raw-data
+[14:14:40] 发送 50 条数据到 traffic-raw-data
+[14:14:45] 发送 50 条数据到 traffic-raw-data
+[14:14:50] 发送 50 条数据到 traffic-raw-data
+[14:14:55] 发送 50 条数据到 traffic-raw-data
+[14:15:00] 发送 50 条数据到 traffic-raw-data
+[14:15:05] 发送 50 条数据到 traffic-raw-data
+[14:15:10] 发送 50 条数据到 traffic-raw-data
+[14:15:15] 发送 50 条数据到 traffic-raw-data
+[14:15:20] 发送 50 条数据到 traffic-raw-data
+[14:15:25] 发送 50 条数据到 traffic-raw-data
+[14:15:30] 发送 50 条数据到 traffic-raw-data
+[14:15:35] 发送 50 条数据到 traffic-raw-data
+[14:15:40] 发送 50 条数据到 traffic-raw-data
+[14:15:45] 发送 50 条数据到 traffic-raw-data
+[14:15:50] 发送 50 条数据到 traffic-raw-data
+[14:15:55] 发送 50 条数据到 traffic-raw-data
+[14:16:00] 发送 50 条数据到 traffic-raw-data
+[14:16:05] 发送 50 条数据到 traffic-raw-data
+[14:16:10] 发送 50 条数据到 traffic-raw-data
+[14:16:15] 发送 50 条数据到 traffic-raw-data
+
+[模拟器] 已停止
+%3|1779863020.646|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2050ms in state CONNECT)
+[模拟器] 启动，连接 Kafka: 127.0.0.1:9092
+[模拟器] 目标 Topic: traffic-raw-data
+[模拟器] 共加载 106 个检测器，每 5 秒发送一批数据...
+[模拟器] 按 Ctrl+C 停止
+
+[14:23:38] 发送 50 条数据到 traffic-raw-data
+[14:23:45] 发送 50 条数据到 traffic-raw-data
+[14:23:51] 发送 50 条数据到 traffic-raw-data
+[14:23:56] 发送 50 条数据到 traffic-raw-data
+[14:24:01] 发送 50 条数据到 traffic-raw-data
+[14:24:06] 发送 50 条数据到 traffic-raw-data
+[14:24:11] 发送 50 条数据到 traffic-raw-data
+[14:24:16] 发送 50 条数据到 traffic-raw-data
+[14:24:21] 发送 50 条数据到 traffic-raw-data
+[14:24:26] 发送 50 条数据到 traffic-raw-data
+[14:24:32] 发送 50 条数据到 traffic-raw-data
+[14:24:37] 发送 50 条数据到 traffic-raw-data
+[14:24:42] 发送 50 条数据到 traffic-raw-data
+[14:24:47] 发送 50 条数据到 traffic-raw-data
+[14:24:52] 发送 50 条数据到 traffic-raw-data
+[14:24:58] 发送 50 条数据到 traffic-raw-data
+[14:25:03] 发送 50 条数据到 traffic-raw-data
+
+[模拟器] 已停止
+%3|1779883842.060|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2015ms in state CONNECT)
+%3|1779883844.323|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2025ms in state CONNECT, 1 identical error(s) suppressed)
+%3|1779884001.285|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2036ms in state CONNECT)
+%3|1779884003.516|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2011ms in state CONNECT, 1 identical error(s) suppressed)
+%3|1779885551.399|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2047ms in state CONNECT)
+%3|1779885553.609|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2022ms in state CONNECT, 1 identical error(s) suppressed)
+%3|1779888102.733|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2033ms in state CONNECT)
+%3|1779888104.976|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2037ms in state CONNECT, 1 identical error(s) suppressed)
+%3|1779888496.088|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2023ms in state CONNECT)
+%3|1779888498.402|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2026ms in state CONNECT, 1 identical error(s) suppressed)
+%3|1779889402.167|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2038ms in state CONNECT)
+%3|1779889404.480|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2028ms in state CONNECT, 1 identical error(s) suppressed)
+%3|1779890121.368|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2038ms in state CONNECT)
+%3|1779890123.568|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2026ms in state CONNECT, 1 identical error(s) suppressed)
+%3|1779890300.057|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2028ms in state CONNECT)
+%3|1779891226.568|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2034ms in state CONNECT)
+%3|1779892531.094|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2034ms in state CONNECT)
+[模拟器] 启动，连接 Kafka: 127.0.0.1:9092
+[模拟器] 目标 Topic: traffic-raw-data
+[模拟器] 共加载 106 个检测器，每 5 秒发送一批数据...
+[模拟器] 按 Ctrl+C 停止
+
+[22:35:29] 发送 50 条数据到 traffic-raw-data
+[22:35:36] 发送 50 条数据到 traffic-raw-data
+[22:35:41] 发送 50 条数据到 traffic-raw-data
+[22:35:46] 发送 50 条数据到 traffic-raw-data
+[22:35:51] 发送 50 条数据到 traffic-raw-data
+[22:35:56] 发送 50 条数据到 traffic-raw-data
+[22:36:01] 发送 50 条数据到 traffic-raw-data
+[22:36:06] 发送 50 条数据到 traffic-raw-data
+[22:36:11] 发送 50 条数据到 traffic-raw-data
+[22:36:16] 发送 50 条数据到 traffic-raw-data
+[22:36:21] 发送 50 条数据到 traffic-raw-data
+[22:36:26] 发送 50 条数据到 traffic-raw-data
+[22:36:31] 发送 50 条数据到 traffic-raw-data
+[22:36:36] 发送 50 条数据到 traffic-raw-data
+[22:36:41] 发送 50 条数据到 traffic-raw-data
+[22:36:46] 发送 50 条数据到 traffic-raw-data
+[22:36:51] 发送 50 条数据到 traffic-raw-data
+[22:36:56] 发送 50 条数据到 traffic-raw-data
+[22:37:01] 发送 50 条数据到 traffic-raw-data
+[22:37:06] 发送 50 条数据到 traffic-raw-data
+[22:37:11] 发送 50 条数据到 traffic-raw-data
+[22:37:16] 发送 50 条数据到 traffic-raw-data
+[22:37:21] 发送 50 条数据到 traffic-raw-data
+[22:37:26] 发送 50 条数据到 traffic-raw-data
+[22:37:31] 发送 50 条数据到 traffic-raw-data
+[22:37:36] 发送 50 条数据到 traffic-raw-data
+[22:37:41] 发送 50 条数据到 traffic-raw-data
+[22:37:46] 发送 50 条数据到 traffic-raw-data
+[22:37:51] 发送 50 条数据到 traffic-raw-data
+[22:37:56] 发送 50 条数据到 traffic-raw-data
+[22:38:01] 发送 50 条数据到 traffic-raw-data
+[22:38:06] 发送 50 条数据到 traffic-raw-data
+[22:38:11] 发送 50 条数据到 traffic-raw-data
+[22:38:16] 发送 50 条数据到 traffic-raw-data
+[22:38:21] 发送 50 条数据到 traffic-raw-data
+[22:38:26] 发送 50 条数据到 traffic-raw-data
+[22:38:31] 发送 50 条数据到 traffic-raw-data
+[22:38:36] 发送 50 条数据到 traffic-raw-data
+[22:38:41] 发送 50 条数据到 traffic-raw-data
+[22:38:46] 发送 50 条数据到 traffic-raw-data
+[22:38:51] 发送 50 条数据到 traffic-raw-data
+[22:38:56] 发送 50 条数据到 traffic-raw-data
+[22:39:01] 发送 50 条数据到 traffic-raw-data
+[22:39:06] 发送 50 条数据到 traffic-raw-data
+[22:39:11] 发送 50 条数据到 traffic-raw-data
+[22:39:17] 发送 50 条数据到 traffic-raw-data
+[22:39:22] 发送 50 条数据到 traffic-raw-data
+[22:39:27] 发送 50 条数据到 traffic-raw-data
+[22:39:32] 发送 50 条数据到 traffic-raw-data
+[22:39:37] 发送 50 条数据到 traffic-raw-data
+[22:39:42] 发送 50 条数据到 traffic-raw-data
+[22:39:47] 发送 50 条数据到 traffic-raw-data
+[22:39:52] 发送 50 条数据到 traffic-raw-data
+[22:39:57] 发送 50 条数据到 traffic-raw-data
+[22:40:02] 发送 50 条数据到 traffic-raw-data
+[22:40:07] 发送 50 条数据到 traffic-raw-data
+[22:40:12] 发送 50 条数据到 traffic-raw-data
+[22:40:17] 发送 50 条数据到 traffic-raw-data
+[22:40:22] 发送 50 条数据到 traffic-raw-data
+[22:40:27] 发送 50 条数据到 traffic-raw-data
+[22:40:32] 发送 50 条数据到 traffic-raw-data
+[22:40:37] 发送 50 条数据到 traffic-raw-data
+[22:40:42] 发送 50 条数据到 traffic-raw-data
+[22:40:47] 发送 50 条数据到 traffic-raw-data
+[22:40:52] 发送 50 条数据到 traffic-raw-data
+[22:40:57] 发送 50 条数据到 traffic-raw-data
+[22:41:02] 发送 50 条数据到 traffic-raw-data
+[22:41:07] 发送 50 条数据到 traffic-raw-data
+[22:41:12] 发送 50 条数据到 traffic-raw-data
+[22:41:17] 发送 50 条数据到 traffic-raw-data
+[22:41:22] 发送 50 条数据到 traffic-raw-data
+[22:41:27] 发送 50 条数据到 traffic-raw-data
+[22:41:32] 发送 50 条数据到 traffic-raw-data
+[22:41:37] 发送 50 条数据到 traffic-raw-data
+[22:41:42] 发送 50 条数据到 traffic-raw-data
+[22:41:47] 发送 50 条数据到 traffic-raw-data
+[22:41:52] 发送 50 条数据到 traffic-raw-data
+[22:41:57] 发送 50 条数据到 traffic-raw-data
+[22:42:02] 发送 50 条数据到 traffic-raw-data
+[22:42:07] 发送 50 条数据到 traffic-raw-data
+[22:42:12] 发送 50 条数据到 traffic-raw-data
+[22:42:17] 发送 50 条数据到 traffic-raw-data
+[22:42:22] 发送 50 条数据到 traffic-raw-data
+[22:42:27] 发送 50 条数据到 traffic-raw-data
+[22:42:32] 发送 50 条数据到 traffic-raw-data
+[22:42:37] 发送 50 条数据到 traffic-raw-data
+[22:42:42] 发送 50 条数据到 traffic-raw-data
+[22:42:47] 发送 50 条数据到 traffic-raw-data
+[22:42:52] 发送 50 条数据到 traffic-raw-data
+[22:42:57] 发送 50 条数据到 traffic-raw-data
+[22:43:02] 发送 50 条数据到 traffic-raw-data
+[22:43:07] 发送 50 条数据到 traffic-raw-data
+[22:43:12] 发送 50 条数据到 traffic-raw-data
+[22:43:17] 发送 50 条数据到 traffic-raw-data
+[22:43:22] 发送 50 条数据到 traffic-raw-data
+[22:43:27] 发送 50 条数据到 traffic-raw-data
+[22:43:32] 发送 50 条数据到 traffic-raw-data
+[22:43:37] 发送 50 条数据到 traffic-raw-data
+[22:43:42] 发送 50 条数据到 traffic-raw-data
+[22:43:47] 发送 50 条数据到 traffic-raw-data
+
+[模拟器] 已停止
+%3|1779893041.627|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2035ms in state CONNECT)
+[模拟器] 启动，连接 Kafka: 127.0.0.1:9092
+[模拟器] 目标 Topic: traffic-raw-data
+[模拟器] 共加载 106 个检测器，每 5 秒发送一批数据...
+[模拟器] 按 Ctrl+C 停止
+
+[22:43:59] 发送 50 条数据到 traffic-raw-data
+[22:44:06] 发送 50 条数据到 traffic-raw-data
+[22:44:11] 发送 50 条数据到 traffic-raw-data
+[22:44:16] 发送 50 条数据到 traffic-raw-data
+[22:44:21] 发送 50 条数据到 traffic-raw-data
+[22:44:26] 发送 50 条数据到 traffic-raw-data
+[22:44:31] 发送 50 条数据到 traffic-raw-data
+[22:44:36] 发送 50 条数据到 traffic-raw-data
+[22:44:41] 发送 50 条数据到 traffic-raw-data
+[22:44:47] 发送 50 条数据到 traffic-raw-data
+[22:44:52] 发送 50 条数据到 traffic-raw-data
+[22:44:57] 发送 50 条数据到 traffic-raw-data
+[22:45:02] 发送 50 条数据到 traffic-raw-data
+[22:45:07] 发送 50 条数据到 traffic-raw-data
+[22:45:12] 发送 50 条数据到 traffic-raw-data
+[22:45:17] 发送 50 条数据到 traffic-raw-data
+[22:45:22] 发送 50 条数据到 traffic-raw-data
+[22:45:27] 发送 50 条数据到 traffic-raw-data
+[22:45:32] 发送 50 条数据到 traffic-raw-data
+[22:45:37] 发送 50 条数据到 traffic-raw-data
+[22:45:42] 发送 50 条数据到 traffic-raw-data
+[22:45:47] 发送 50 条数据到 traffic-raw-data
+[22:45:52] 发送 50 条数据到 traffic-raw-data
+[22:45:57] 发送 50 条数据到 traffic-raw-data
+[22:46:02] 发送 50 条数据到 traffic-raw-data
+[22:46:07] 发送 50 条数据到 traffic-raw-data
+[22:46:12] 发送 50 条数据到 traffic-raw-data
+[22:46:17] 发送 50 条数据到 traffic-raw-data
+[22:46:22] 发送 50 条数据到 traffic-raw-data
+[22:46:27] 发送 50 条数据到 traffic-raw-data
+[22:46:32] 发送 50 条数据到 traffic-raw-data
+[22:46:37] 发送 50 条数据到 traffic-raw-data
+[22:46:42] 发送 50 条数据到 traffic-raw-data
+[22:46:47] 发送 50 条数据到 traffic-raw-data
+[22:46:52] 发送 50 条数据到 traffic-raw-data
+[22:46:57] 发送 50 条数据到 traffic-raw-data
+[22:47:02] 发送 50 条数据到 traffic-raw-data
+[22:47:07] 发送 50 条数据到 traffic-raw-data
+[22:47:12] 发送 50 条数据到 traffic-raw-data
+[22:47:17] 发送 50 条数据到 traffic-raw-data
+[22:47:22] 发送 50 条数据到 traffic-raw-data
+[22:47:27] 发送 50 条数据到 traffic-raw-data
+[22:47:32] 发送 50 条数据到 traffic-raw-data
+[22:47:37] 发送 50 条数据到 traffic-raw-data
+[22:47:42] 发送 50 条数据到 traffic-raw-data
+[22:47:47] 发送 50 条数据到 traffic-raw-data
+[22:47:52] 发送 50 条数据到 traffic-raw-data
+[22:47:57] 发送 50 条数据到 traffic-raw-data
+[22:48:02] 发送 50 条数据到 traffic-raw-data
+[22:48:07] 发送 50 条数据到 traffic-raw-data
+[22:48:12] 发送 50 条数据到 traffic-raw-data
+[22:48:17] 发送 50 条数据到 traffic-raw-data
+[22:48:22] 发送 50 条数据到 traffic-raw-data
+[22:48:27] 发送 50 条数据到 traffic-raw-data
+[22:48:32] 发送 50 条数据到 traffic-raw-data
+[22:48:37] 发送 50 条数据到 traffic-raw-data
+[22:48:42] 发送 50 条数据到 traffic-raw-data
+[22:48:47] 发送 50 条数据到 traffic-raw-data
+[22:48:52] 发送 50 条数据到 traffic-raw-data
+[22:48:57] 发送 50 条数据到 traffic-raw-data
+[22:49:02] 发送 50 条数据到 traffic-raw-data
+[22:49:07] 发送 50 条数据到 traffic-raw-data
+[22:49:12] 发送 50 条数据到 traffic-raw-data
+[22:49:17] 发送 50 条数据到 traffic-raw-data
+[22:49:22] 发送 50 条数据到 traffic-raw-data
+[22:49:27] 发送 50 条数据到 traffic-raw-data
+[22:49:32] 发送 50 条数据到 traffic-raw-data
+[22:49:37] 发送 50 条数据到 traffic-raw-data
+[22:49:42] 发送 50 条数据到 traffic-raw-data
+[22:49:47] 发送 50 条数据到 traffic-raw-data
+[22:49:52] 发送 50 条数据到 traffic-raw-data
+[22:49:58] 发送 50 条数据到 traffic-raw-data
+[22:50:03] 发送 50 条数据到 traffic-raw-data
+[22:50:08] 发送 50 条数据到 traffic-raw-data
+[22:50:13] 发送 50 条数据到 traffic-raw-data
+[22:50:18] 发送 50 条数据到 traffic-raw-data
+[22:50:23] 发送 50 条数据到 traffic-raw-data
+[22:50:28] 发送 50 条数据到 traffic-raw-data
+[22:50:33] 发送 50 条数据到 traffic-raw-data
+[22:50:38] 发送 50 条数据到 traffic-raw-data
+[22:50:43] 发送 50 条数据到 traffic-raw-data
+[22:50:48] 发送 50 条数据到 traffic-raw-data
+[22:50:53] 发送 50 条数据到 traffic-raw-data
+[22:50:58] 发送 50 条数据到 traffic-raw-data
+[22:51:03] 发送 50 条数据到 traffic-raw-data
+[22:51:08] 发送 50 条数据到 traffic-raw-data
+[22:51:13] 发送 50 条数据到 traffic-raw-data
+[22:51:18] 发送 50 条数据到 traffic-raw-data
+[22:51:23] 发送 50 条数据到 traffic-raw-data
+[22:51:28] 发送 50 条数据到 traffic-raw-data
+[22:51:33] 发送 50 条数据到 traffic-raw-data
+[22:51:38] 发送 50 条数据到 traffic-raw-data
+[22:51:43] 发送 50 条数据到 traffic-raw-data
+[22:51:48] 发送 50 条数据到 traffic-raw-data
+[22:51:53] 发送 50 条数据到 traffic-raw-data
+[22:51:58] 发送 50 条数据到 traffic-raw-data
+[22:52:07] 发送 50 条数据到 traffic-raw-data
+[22:52:12] 发送 50 条数据到 traffic-raw-data
+[22:52:17] 发送 50 条数据到 traffic-raw-data
+[22:52:22] 发送 50 条数据到 traffic-raw-data
+[22:52:27] 发送 50 条数据到 traffic-raw-data
+[22:52:32] 发送 50 条数据到 traffic-raw-data
+[22:52:37] 发送 50 条数据到 traffic-raw-data
+[22:52:42] 发送 50 条数据到 traffic-raw-data
+[22:52:47] 发送 50 条数据到 traffic-raw-data
+[22:52:52] 发送 50 条数据到 traffic-raw-data
+[22:52:57] 发送 50 条数据到 traffic-raw-data
+[22:53:02] 发送 50 条数据到 traffic-raw-data
+[22:53:07] 发送 50 条数据到 traffic-raw-data
+[22:53:12] 发送 50 条数据到 traffic-raw-data
+[22:53:17] 发送 50 条数据到 traffic-raw-data
+[22:53:22] 发送 50 条数据到 traffic-raw-data
+[22:53:27] 发送 50 条数据到 traffic-raw-data
+[22:53:32] 发送 50 条数据到 traffic-raw-data
+[22:53:38] 发送 50 条数据到 traffic-raw-data
+[22:53:43] 发送 50 条数据到 traffic-raw-data
+[22:53:48] 发送 50 条数据到 traffic-raw-data
+[22:53:53] 发送 50 条数据到 traffic-raw-data
+[22:53:58] 发送 50 条数据到 traffic-raw-data
+[22:54:03] 发送 50 条数据到 traffic-raw-data
+[22:54:08] 发送 50 条数据到 traffic-raw-data
+[22:54:13] 发送 50 条数据到 traffic-raw-data
+[22:54:18] 发送 50 条数据到 traffic-raw-data
+[22:54:23] 发送 50 条数据到 traffic-raw-data
+[22:54:28] 发送 50 条数据到 traffic-raw-data
+[22:54:33] 发送 50 条数据到 traffic-raw-data
+[22:54:38] 发送 50 条数据到 traffic-raw-data
+[22:54:43] 发送 50 条数据到 traffic-raw-data
+[22:54:48] 发送 50 条数据到 traffic-raw-data
+[22:54:53] 发送 50 条数据到 traffic-raw-data
+[22:54:58] 发送 50 条数据到 traffic-raw-data
+[22:55:03] 发送 50 条数据到 traffic-raw-data
+[22:55:08] 发送 50 条数据到 traffic-raw-data
+[22:55:13] 发送 50 条数据到 traffic-raw-data
+[22:55:18] 发送 50 条数据到 traffic-raw-data
+[22:55:23] 发送 50 条数据到 traffic-raw-data
+[22:55:28] 发送 50 条数据到 traffic-raw-data
+[22:55:33] 发送 50 条数据到 traffic-raw-data
+[22:55:38] 发送 50 条数据到 traffic-raw-data
+[22:55:43] 发送 50 条数据到 traffic-raw-data
+[22:55:48] 发送 50 条数据到 traffic-raw-data
+[22:55:53] 发送 50 条数据到 traffic-raw-data
+[22:55:58] 发送 50 条数据到 traffic-raw-data
+[22:56:03] 发送 50 条数据到 traffic-raw-data
+[22:56:08] 发送 50 条数据到 traffic-raw-data
+[22:56:13] 发送 50 条数据到 traffic-raw-data
+[22:56:18] 发送 50 条数据到 traffic-raw-data
+[22:56:23] 发送 50 条数据到 traffic-raw-data
+[22:56:28] 发送 50 条数据到 traffic-raw-data
+[22:56:33] 发送 50 条数据到 traffic-raw-data
+[22:56:38] 发送 50 条数据到 traffic-raw-data
+[22:56:43] 发送 50 条数据到 traffic-raw-data
+[22:56:48] 发送 50 条数据到 traffic-raw-data
+[22:56:53] 发送 50 条数据到 traffic-raw-data
+[22:56:58] 发送 50 条数据到 traffic-raw-data
+[22:57:03] 发送 50 条数据到 traffic-raw-data
+[22:57:08] 发送 50 条数据到 traffic-raw-data
+[22:57:13] 发送 50 条数据到 traffic-raw-data
+[22:57:18] 发送 50 条数据到 traffic-raw-data
+[22:57:23] 发送 50 条数据到 traffic-raw-data
+[22:57:28] 发送 50 条数据到 traffic-raw-data
+[22:57:33] 发送 50 条数据到 traffic-raw-data
+[22:57:38] 发送 50 条数据到 traffic-raw-data
+[22:57:43] 发送 50 条数据到 traffic-raw-data
+[22:57:48] 发送 50 条数据到 traffic-raw-data
+[22:57:53] 发送 50 条数据到 traffic-raw-data
+[22:57:58] 发送 50 条数据到 traffic-raw-data
+[22:58:03] 发送 50 条数据到 traffic-raw-data
+[22:58:08] 发送 50 条数据到 traffic-raw-data
+[22:58:13] 发送 50 条数据到 traffic-raw-data
+[22:58:18] 发送 50 条数据到 traffic-raw-data
+[22:58:23] 发送 50 条数据到 traffic-raw-data
+[22:58:28] 发送 50 条数据到 traffic-raw-data
+[22:58:33] 发送 50 条数据到 traffic-raw-data
+[22:58:38] 发送 50 条数据到 traffic-raw-data
+[22:58:43] 发送 50 条数据到 traffic-raw-data
+[22:58:48] 发送 50 条数据到 traffic-raw-data
+[22:58:54] 发送 50 条数据到 traffic-raw-data
+[22:58:59] 发送 50 条数据到 traffic-raw-data
+[22:59:04] 发送 50 条数据到 traffic-raw-data
+[22:59:09] 发送 50 条数据到 traffic-raw-data
+[22:59:14] 发送 50 条数据到 traffic-raw-data
+[22:59:19] 发送 50 条数据到 traffic-raw-data
+[22:59:24] 发送 50 条数据到 traffic-raw-data
+[22:59:29] 发送 50 条数据到 traffic-raw-data
+[22:59:34] 发送 50 条数据到 traffic-raw-data
+[22:59:39] 发送 50 条数据到 traffic-raw-data
+[22:59:44] 发送 50 条数据到 traffic-raw-data
+[22:59:49] 发送 50 条数据到 traffic-raw-data
+[22:59:54] 发送 50 条数据到 traffic-raw-data
+[22:59:59] 发送 50 条数据到 traffic-raw-data
+[23:00:04] 发送 50 条数据到 traffic-raw-data
+[23:00:09] 发送 50 条数据到 traffic-raw-data
+[23:00:14] 发送 50 条数据到 traffic-raw-data
+[23:00:19] 发送 50 条数据到 traffic-raw-data
+[23:00:24] 发送 50 条数据到 traffic-raw-data
+[23:00:29] 发送 50 条数据到 traffic-raw-data
+[23:00:34] 发送 50 条数据到 traffic-raw-data
+[23:00:39] 发送 50 条数据到 traffic-raw-data
+[23:00:44] 发送 50 条数据到 traffic-raw-data
+[23:00:49] 发送 50 条数据到 traffic-raw-data
+[23:00:54] 发送 50 条数据到 traffic-raw-data
+[23:00:59] 发送 50 条数据到 traffic-raw-data
+[23:01:04] 发送 50 条数据到 traffic-raw-data
+[23:01:09] 发送 50 条数据到 traffic-raw-data
+[23:01:14] 发送 50 条数据到 traffic-raw-data
+[23:01:19] 发送 50 条数据到 traffic-raw-data
+[23:01:24] 发送 50 条数据到 traffic-raw-data
+[23:01:29] 发送 50 条数据到 traffic-raw-data
+[23:01:34] 发送 50 条数据到 traffic-raw-data
+[23:01:39] 发送 50 条数据到 traffic-raw-data
+[23:01:44] 发送 50 条数据到 traffic-raw-data
+[23:01:49] 发送 50 条数据到 traffic-raw-data
+[23:01:54] 发送 50 条数据到 traffic-raw-data
+[23:01:59] 发送 50 条数据到 traffic-raw-data
+[23:02:04] 发送 50 条数据到 traffic-raw-data
+[23:02:09] 发送 50 条数据到 traffic-raw-data
+[23:02:14] 发送 50 条数据到 traffic-raw-data
+[23:02:19] 发送 50 条数据到 traffic-raw-data
+[23:02:24] 发送 50 条数据到 traffic-raw-data
+[23:02:29] 发送 50 条数据到 traffic-raw-data
+[23:02:34] 发送 50 条数据到 traffic-raw-data
+[23:02:39] 发送 50 条数据到 traffic-raw-data
+[23:02:44] 发送 50 条数据到 traffic-raw-data
+[23:02:49] 发送 50 条数据到 traffic-raw-data
+[23:02:54] 发送 50 条数据到 traffic-raw-data
+[23:02:59] 发送 50 条数据到 traffic-raw-data
+[23:03:04] 发送 50 条数据到 traffic-raw-data
+[23:03:09] 发送 50 条数据到 traffic-raw-data
+[23:03:14] 发送 50 条数据到 traffic-raw-data
+[23:03:19] 发送 50 条数据到 traffic-raw-data
+[23:03:24] 发送 50 条数据到 traffic-raw-data
+[23:03:29] 发送 50 条数据到 traffic-raw-data
+[23:03:34] 发送 50 条数据到 traffic-raw-data
+[23:03:39] 发送 50 条数据到 traffic-raw-data
+[23:03:44] 发送 50 条数据到 traffic-raw-data
+[23:03:49] 发送 50 条数据到 traffic-raw-data
+[23:03:54] 发送 50 条数据到 traffic-raw-data
+[23:03:59] 发送 50 条数据到 traffic-raw-data
+[23:04:04] 发送 50 条数据到 traffic-raw-data
+[23:04:09] 发送 50 条数据到 traffic-raw-data
+[23:04:14] 发送 50 条数据到 traffic-raw-data
+[23:04:20] 发送 50 条数据到 traffic-raw-data
+[23:04:25] 发送 50 条数据到 traffic-raw-data
+[23:04:30] 发送 50 条数据到 traffic-raw-data
+[23:04:35] 发送 50 条数据到 traffic-raw-data
+[23:04:40] 发送 50 条数据到 traffic-raw-data
+[23:04:45] 发送 50 条数据到 traffic-raw-data
+[23:04:50] 发送 50 条数据到 traffic-raw-data
+[23:04:55] 发送 50 条数据到 traffic-raw-data
+[23:05:00] 发送 50 条数据到 traffic-raw-data
+[23:05:05] 发送 50 条数据到 traffic-raw-data
+[23:05:10] 发送 50 条数据到 traffic-raw-data
+[23:05:15] 发送 50 条数据到 traffic-raw-data
+[23:05:20] 发送 50 条数据到 traffic-raw-data
+[23:05:25] 发送 50 条数据到 traffic-raw-data
+[23:05:30] 发送 50 条数据到 traffic-raw-data
+[23:05:35] 发送 50 条数据到 traffic-raw-data
+[23:05:40] 发送 50 条数据到 traffic-raw-data
+[23:05:45] 发送 50 条数据到 traffic-raw-data
+[23:05:50] 发送 50 条数据到 traffic-raw-data
+[23:05:55] 发送 50 条数据到 traffic-raw-data
+[23:06:00] 发送 50 条数据到 traffic-raw-data
+[23:06:05] 发送 50 条数据到 traffic-raw-data
+[23:06:10] 发送 50 条数据到 traffic-raw-data
+[23:06:15] 发送 50 条数据到 traffic-raw-data
+[23:06:20] 发送 50 条数据到 traffic-raw-data
+[23:06:25] 发送 50 条数据到 traffic-raw-data
+[23:06:30] 发送 50 条数据到 traffic-raw-data
+[23:06:35] 发送 50 条数据到 traffic-raw-data
+[23:06:40] 发送 50 条数据到 traffic-raw-data
+[23:06:45] 发送 50 条数据到 traffic-raw-data
+[23:06:50] 发送 50 条数据到 traffic-raw-data
+[23:06:55] 发送 50 条数据到 traffic-raw-data
+[23:07:00] 发送 50 条数据到 traffic-raw-data
+[23:07:05] 发送 50 条数据到 traffic-raw-data
+[23:07:10] 发送 50 条数据到 traffic-raw-data
+[23:07:15] 发送 50 条数据到 traffic-raw-data
+[23:07:20] 发送 50 条数据到 traffic-raw-data
+[23:07:25] 发送 50 条数据到 traffic-raw-data
+[23:07:30] 发送 50 条数据到 traffic-raw-data
+[23:07:35] 发送 50 条数据到 traffic-raw-data
+[23:07:40] 发送 50 条数据到 traffic-raw-data
+[23:07:45] 发送 50 条数据到 traffic-raw-data
+[23:07:50] 发送 50 条数据到 traffic-raw-data
+[23:07:55] 发送 50 条数据到 traffic-raw-data
+[23:08:00] 发送 50 条数据到 traffic-raw-data
+[23:08:05] 发送 50 条数据到 traffic-raw-data
+[23:08:10] 发送 50 条数据到 traffic-raw-data
+[23:08:15] 发送 50 条数据到 traffic-raw-data
+[23:08:20] 发送 50 条数据到 traffic-raw-data
+[23:08:25] 发送 50 条数据到 traffic-raw-data
+[23:08:30] 发送 50 条数据到 traffic-raw-data
+[23:08:35] 发送 50 条数据到 traffic-raw-data
+[23:08:40] 发送 50 条数据到 traffic-raw-data
+[23:08:45] 发送 50 条数据到 traffic-raw-data
+[23:08:50] 发送 50 条数据到 traffic-raw-data
+[23:08:55] 发送 50 条数据到 traffic-raw-data
+[23:09:00] 发送 50 条数据到 traffic-raw-data
+[23:09:05] 发送 50 条数据到 traffic-raw-data
+[23:09:10] 发送 50 条数据到 traffic-raw-data
+[23:09:15] 发送 50 条数据到 traffic-raw-data
+[23:09:20] 发送 50 条数据到 traffic-raw-data
+[23:09:26] 发送 50 条数据到 traffic-raw-data
+[23:09:31] 发送 50 条数据到 traffic-raw-data
+[23:09:36] 发送 50 条数据到 traffic-raw-data
+[23:09:41] 发送 50 条数据到 traffic-raw-data
+[23:09:46] 发送 50 条数据到 traffic-raw-data
+[23:09:51] 发送 50 条数据到 traffic-raw-data
+[23:09:56] 发送 50 条数据到 traffic-raw-data
+[23:10:01] 发送 50 条数据到 traffic-raw-data
+[23:10:06] 发送 50 条数据到 traffic-raw-data
+[23:10:11] 发送 50 条数据到 traffic-raw-data
+[23:10:16] 发送 50 条数据到 traffic-raw-data
+[23:10:21] 发送 50 条数据到 traffic-raw-data
+[23:10:26] 发送 50 条数据到 traffic-raw-data
+[23:10:31] 发送 50 条数据到 traffic-raw-data
+[23:10:36] 发送 50 条数据到 traffic-raw-data
+[23:10:41] 发送 50 条数据到 traffic-raw-data
+[23:10:46] 发送 50 条数据到 traffic-raw-data
+[23:10:51] 发送 50 条数据到 traffic-raw-data
+[23:10:56] 发送 50 条数据到 traffic-raw-data
+[23:11:01] 发送 50 条数据到 traffic-raw-data
+[23:11:06] 发送 50 条数据到 traffic-raw-data
+[23:11:11] 发送 50 条数据到 traffic-raw-data
+[23:11:16] 发送 50 条数据到 traffic-raw-data
+[23:11:21] 发送 50 条数据到 traffic-raw-data
+[23:11:26] 发送 50 条数据到 traffic-raw-data
+[23:11:31] 发送 50 条数据到 traffic-raw-data
+[23:11:36] 发送 50 条数据到 traffic-raw-data
+[23:11:41] 发送 50 条数据到 traffic-raw-data
+[23:11:46] 发送 50 条数据到 traffic-raw-data
+[23:11:51] 发送 50 条数据到 traffic-raw-data
+[23:11:56] 发送 50 条数据到 traffic-raw-data
+[23:12:01] 发送 50 条数据到 traffic-raw-data
+[23:12:06] 发送 50 条数据到 traffic-raw-data
+[23:12:11] 发送 50 条数据到 traffic-raw-data
+[23:12:16] 发送 50 条数据到 traffic-raw-data
+[23:12:21] 发送 50 条数据到 traffic-raw-data
+[23:12:26] 发送 50 条数据到 traffic-raw-data
+[23:12:31] 发送 50 条数据到 traffic-raw-data
+[23:12:36] 发送 50 条数据到 traffic-raw-data
+[23:12:41] 发送 50 条数据到 traffic-raw-data
+[23:12:46] 发送 50 条数据到 traffic-raw-data
+[23:12:51] 发送 50 条数据到 traffic-raw-data
+[23:12:56] 发送 50 条数据到 traffic-raw-data
+[23:13:01] 发送 50 条数据到 traffic-raw-data
+[23:13:06] 发送 50 条数据到 traffic-raw-data
+[23:13:11] 发送 50 条数据到 traffic-raw-data
+[23:13:16] 发送 50 条数据到 traffic-raw-data
+[23:13:21] 发送 50 条数据到 traffic-raw-data
+[23:13:26] 发送 50 条数据到 traffic-raw-data
+[23:13:31] 发送 50 条数据到 traffic-raw-data
+[23:13:36] 发送 50 条数据到 traffic-raw-data
+[23:13:41] 发送 50 条数据到 traffic-raw-data
+[23:13:46] 发送 50 条数据到 traffic-raw-data
+[23:13:51] 发送 50 条数据到 traffic-raw-data
+[23:13:56] 发送 50 条数据到 traffic-raw-data
+[23:14:01] 发送 50 条数据到 traffic-raw-data
+[23:14:06] 发送 50 条数据到 traffic-raw-data
+[23:14:11] 发送 50 条数据到 traffic-raw-data
+[23:14:16] 发送 50 条数据到 traffic-raw-data
+[23:14:21] 发送 50 条数据到 traffic-raw-data
+[23:14:26] 发送 50 条数据到 traffic-raw-data
+[23:14:31] 发送 50 条数据到 traffic-raw-data
+[23:14:36] 发送 50 条数据到 traffic-raw-data
+[23:14:41] 发送 50 条数据到 traffic-raw-data
+[23:14:46] 发送 50 条数据到 traffic-raw-data
+[23:14:51] 发送 50 条数据到 traffic-raw-data
+[23:14:56] 发送 50 条数据到 traffic-raw-data
+[23:15:01] 发送 50 条数据到 traffic-raw-data
+[23:15:07] 发送 50 条数据到 traffic-raw-data
+[23:15:12] 发送 50 条数据到 traffic-raw-data
+[23:15:17] 发送 50 条数据到 traffic-raw-data
+[23:15:22] 发送 50 条数据到 traffic-raw-data
+[23:15:27] 发送 50 条数据到 traffic-raw-data
+[23:15:32] 发送 50 条数据到 traffic-raw-data
+[23:15:37] 发送 50 条数据到 traffic-raw-data
+[23:15:42] 发送 50 条数据到 traffic-raw-data
+[23:15:47] 发送 50 条数据到 traffic-raw-data
+[23:15:52] 发送 50 条数据到 traffic-raw-data
+[23:15:57] 发送 50 条数据到 traffic-raw-data
+[23:16:02] 发送 50 条数据到 traffic-raw-data
+[23:16:07] 发送 50 条数据到 traffic-raw-data
+[23:16:12] 发送 50 条数据到 traffic-raw-data
+[23:16:17] 发送 50 条数据到 traffic-raw-data
+[23:16:22] 发送 50 条数据到 traffic-raw-data
+[23:16:27] 发送 50 条数据到 traffic-raw-data
+[23:16:32] 发送 50 条数据到 traffic-raw-data
+[23:16:37] 发送 50 条数据到 traffic-raw-data
+[23:16:42] 发送 50 条数据到 traffic-raw-data
+[23:16:47] 发送 50 条数据到 traffic-raw-data
+[23:16:52] 发送 50 条数据到 traffic-raw-data
+[23:16:57] 发送 50 条数据到 traffic-raw-data
+[23:17:02] 发送 50 条数据到 traffic-raw-data
+[23:17:07] 发送 50 条数据到 traffic-raw-data
+[23:17:12] 发送 50 条数据到 traffic-raw-data
+[23:17:17] 发送 50 条数据到 traffic-raw-data
+[23:17:22] 发送 50 条数据到 traffic-raw-data
+[23:17:27] 发送 50 条数据到 traffic-raw-data
+[23:17:32] 发送 50 条数据到 traffic-raw-data
+[23:17:37] 发送 50 条数据到 traffic-raw-data
+[23:17:42] 发送 50 条数据到 traffic-raw-data
+[23:17:47] 发送 50 条数据到 traffic-raw-data
+[23:17:52] 发送 50 条数据到 traffic-raw-data
+[23:17:57] 发送 50 条数据到 traffic-raw-data
+[23:18:02] 发送 50 条数据到 traffic-raw-data
+[23:18:07] 发送 50 条数据到 traffic-raw-data
+[23:18:12] 发送 50 条数据到 traffic-raw-data
+[23:18:17] 发送 50 条数据到 traffic-raw-data
+[23:18:22] 发送 50 条数据到 traffic-raw-data
+[23:18:27] 发送 50 条数据到 traffic-raw-data
+[23:18:32] 发送 50 条数据到 traffic-raw-data
+[23:18:37] 发送 50 条数据到 traffic-raw-data
+[23:18:42] 发送 50 条数据到 traffic-raw-data
+[23:18:47] 发送 50 条数据到 traffic-raw-data
+[23:18:52] 发送 50 条数据到 traffic-raw-data
+[23:18:57] 发送 50 条数据到 traffic-raw-data
+[23:19:02] 发送 50 条数据到 traffic-raw-data
+[23:19:07] 发送 50 条数据到 traffic-raw-data
+[23:19:12] 发送 50 条数据到 traffic-raw-data
+[23:19:17] 发送 50 条数据到 traffic-raw-data
+[23:19:22] 发送 50 条数据到 traffic-raw-data
+[23:19:27] 发送 50 条数据到 traffic-raw-data
+[23:19:32] 发送 50 条数据到 traffic-raw-data
+[23:19:37] 发送 50 条数据到 traffic-raw-data
+[23:19:42] 发送 50 条数据到 traffic-raw-data
+[23:19:47] 发送 50 条数据到 traffic-raw-data
+[23:19:52] 发送 50 条数据到 traffic-raw-data
+[23:19:57] 发送 50 条数据到 traffic-raw-data
+[23:20:02] 发送 50 条数据到 traffic-raw-data
+[23:20:07] 发送 50 条数据到 traffic-raw-data
+[23:20:12] 发送 50 条数据到 traffic-raw-data
+[23:20:17] 发送 50 条数据到 traffic-raw-data
+[23:20:22] 发送 50 条数据到 traffic-raw-data
+[23:20:27] 发送 50 条数据到 traffic-raw-data
+[23:20:32] 发送 50 条数据到 traffic-raw-data
+[23:20:37] 发送 50 条数据到 traffic-raw-data
+[23:20:42] 发送 50 条数据到 traffic-raw-data
+[23:20:47] 发送 50 条数据到 traffic-raw-data
+[23:20:52] 发送 50 条数据到 traffic-raw-data
+[23:20:57] 发送 50 条数据到 traffic-raw-data
+[23:21:03] 发送 50 条数据到 traffic-raw-data
+[23:21:08] 发送 50 条数据到 traffic-raw-data
+[23:21:13] 发送 50 条数据到 traffic-raw-data
+[23:21:18] 发送 50 条数据到 traffic-raw-data
+[23:21:23] 发送 50 条数据到 traffic-raw-data
+[23:21:28] 发送 50 条数据到 traffic-raw-data
+[23:21:33] 发送 50 条数据到 traffic-raw-data
+[23:21:38] 发送 50 条数据到 traffic-raw-data
+[23:21:43] 发送 50 条数据到 traffic-raw-data
+[23:21:48] 发送 50 条数据到 traffic-raw-data
+[23:21:53] 发送 50 条数据到 traffic-raw-data
+[23:21:58] 发送 50 条数据到 traffic-raw-data
+[23:22:03] 发送 50 条数据到 traffic-raw-data
+[23:22:08] 发送 50 条数据到 traffic-raw-data
+[23:22:13] 发送 50 条数据到 traffic-raw-data
+[23:22:18] 发送 50 条数据到 traffic-raw-data
+[23:22:23] 发送 50 条数据到 traffic-raw-data
+[23:22:28] 发送 50 条数据到 traffic-raw-data
+[23:22:33] 发送 50 条数据到 traffic-raw-data
+[23:22:38] 发送 50 条数据到 traffic-raw-data
+[23:22:43] 发送 50 条数据到 traffic-raw-data
+[23:22:48] 发送 50 条数据到 traffic-raw-data
+[23:22:53] 发送 50 条数据到 traffic-raw-data
+[23:22:58] 发送 50 条数据到 traffic-raw-data
+[23:23:03] 发送 50 条数据到 traffic-raw-data
+[23:23:08] 发送 50 条数据到 traffic-raw-data
+[23:23:13] 发送 50 条数据到 traffic-raw-data
+[23:23:18] 发送 50 条数据到 traffic-raw-data
+[23:23:23] 发送 50 条数据到 traffic-raw-data
+[23:23:28] 发送 50 条数据到 traffic-raw-data
+[23:23:33] 发送 50 条数据到 traffic-raw-data
+[23:23:38] 发送 50 条数据到 traffic-raw-data
+[23:23:43] 发送 50 条数据到 traffic-raw-data
+[23:23:48] 发送 50 条数据到 traffic-raw-data
+[23:23:53] 发送 50 条数据到 traffic-raw-data
+[23:23:58] 发送 50 条数据到 traffic-raw-data
+[23:24:03] 发送 50 条数据到 traffic-raw-data
+[23:24:08] 发送 50 条数据到 traffic-raw-data
+[23:24:13] 发送 50 条数据到 traffic-raw-data
+[23:24:18] 发送 50 条数据到 traffic-raw-data
+[23:24:23] 发送 50 条数据到 traffic-raw-data
+[23:24:28] 发送 50 条数据到 traffic-raw-data
+[23:24:33] 发送 50 条数据到 traffic-raw-data
+[23:24:38] 发送 50 条数据到 traffic-raw-data
+[23:24:43] 发送 50 条数据到 traffic-raw-data
+[23:24:48] 发送 50 条数据到 traffic-raw-data
+[23:24:53] 发送 50 条数据到 traffic-raw-data
+[23:24:58] 发送 50 条数据到 traffic-raw-data
+[23:25:03] 发送 50 条数据到 traffic-raw-data
+[23:25:08] 发送 50 条数据到 traffic-raw-data
+[23:25:13] 发送 50 条数据到 traffic-raw-data
+[23:25:18] 发送 50 条数据到 traffic-raw-data
+[23:25:23] 发送 50 条数据到 traffic-raw-data
+[23:25:28] 发送 50 条数据到 traffic-raw-data
+[23:25:33] 发送 50 条数据到 traffic-raw-data
+[23:25:38] 发送 50 条数据到 traffic-raw-data
+[23:25:43] 发送 50 条数据到 traffic-raw-data
+[23:25:48] 发送 50 条数据到 traffic-raw-data
+[23:25:53] 发送 50 条数据到 traffic-raw-data
+[23:25:58] 发送 50 条数据到 traffic-raw-data
+[23:26:03] 发送 50 条数据到 traffic-raw-data
+[23:26:08] 发送 50 条数据到 traffic-raw-data
+[23:26:13] 发送 50 条数据到 traffic-raw-data
+[23:26:18] 发送 50 条数据到 traffic-raw-data
+[23:26:24] 发送 50 条数据到 traffic-raw-data
+[23:26:29] 发送 50 条数据到 traffic-raw-data
+[23:26:34] 发送 50 条数据到 traffic-raw-data
+[23:26:39] 发送 50 条数据到 traffic-raw-data
+[23:26:44] 发送 50 条数据到 traffic-raw-data
+[23:26:49] 发送 50 条数据到 traffic-raw-data
+[23:26:54] 发送 50 条数据到 traffic-raw-data
+[23:26:59] 发送 50 条数据到 traffic-raw-data
+[23:27:04] 发送 50 条数据到 traffic-raw-data
+[23:27:09] 发送 50 条数据到 traffic-raw-data
+[23:27:14] 发送 50 条数据到 traffic-raw-data
+[23:27:19] 发送 50 条数据到 traffic-raw-data
+[23:27:24] 发送 50 条数据到 traffic-raw-data
+[23:27:29] 发送 50 条数据到 traffic-raw-data
+[23:27:34] 发送 50 条数据到 traffic-raw-data
+[23:27:39] 发送 50 条数据到 traffic-raw-data
+[23:27:44] 发送 50 条数据到 traffic-raw-data
+[23:27:49] 发送 50 条数据到 traffic-raw-data
+[23:27:54] 发送 50 条数据到 traffic-raw-data
+[23:27:59] 发送 50 条数据到 traffic-raw-data
+[23:28:04] 发送 50 条数据到 traffic-raw-data
+[23:28:09] 发送 50 条数据到 traffic-raw-data
+[23:28:14] 发送 50 条数据到 traffic-raw-data
+[23:28:19] 发送 50 条数据到 traffic-raw-data
+[23:28:24] 发送 50 条数据到 traffic-raw-data
+[23:28:29] 发送 50 条数据到 traffic-raw-data
+[23:28:34] 发送 50 条数据到 traffic-raw-data
+[23:28:39] 发送 50 条数据到 traffic-raw-data
+[23:28:44] 发送 50 条数据到 traffic-raw-data
+[23:28:49] 发送 50 条数据到 traffic-raw-data
+[23:28:54] 发送 50 条数据到 traffic-raw-data
+[23:28:59] 发送 50 条数据到 traffic-raw-data
+[23:29:04] 发送 50 条数据到 traffic-raw-data
+[23:29:09] 发送 50 条数据到 traffic-raw-data
+[23:29:14] 发送 50 条数据到 traffic-raw-data
+[23:29:19] 发送 50 条数据到 traffic-raw-data
+[23:29:24] 发送 50 条数据到 traffic-raw-data
+[23:29:29] 发送 50 条数据到 traffic-raw-data
+[23:29:34] 发送 50 条数据到 traffic-raw-data
+[23:29:39] 发送 50 条数据到 traffic-raw-data
+[23:29:44] 发送 50 条数据到 traffic-raw-data
+[23:29:49] 发送 50 条数据到 traffic-raw-data
+[23:29:54] 发送 50 条数据到 traffic-raw-data
+[23:29:59] 发送 50 条数据到 traffic-raw-data
+[23:30:04] 发送 50 条数据到 traffic-raw-data
+[23:30:09] 发送 50 条数据到 traffic-raw-data
+[23:30:14] 发送 50 条数据到 traffic-raw-data
+[23:30:19] 发送 50 条数据到 traffic-raw-data
+[23:30:24] 发送 50 条数据到 traffic-raw-data
+[23:30:29] 发送 50 条数据到 traffic-raw-data
+[23:30:34] 发送 50 条数据到 traffic-raw-data
+[23:30:39] 发送 50 条数据到 traffic-raw-data
+[23:30:44] 发送 50 条数据到 traffic-raw-data
+[23:30:49] 发送 50 条数据到 traffic-raw-data
+[23:30:54] 发送 50 条数据到 traffic-raw-data
+[23:30:59] 发送 50 条数据到 traffic-raw-data
+[23:31:04] 发送 50 条数据到 traffic-raw-data
+[23:31:09] 发送 50 条数据到 traffic-raw-data
+[23:31:14] 发送 50 条数据到 traffic-raw-data
+[23:31:19] 发送 50 条数据到 traffic-raw-data
+[23:31:24] 发送 50 条数据到 traffic-raw-data
+[23:31:29] 发送 50 条数据到 traffic-raw-data
+[23:31:34] 发送 50 条数据到 traffic-raw-data
+[23:31:39] 发送 50 条数据到 traffic-raw-data
+[23:31:44] 发送 50 条数据到 traffic-raw-data
+[23:31:49] 发送 50 条数据到 traffic-raw-data
+[23:31:55] 发送 50 条数据到 traffic-raw-data
+[23:32:00] 发送 50 条数据到 traffic-raw-data
+[23:32:05] 发送 50 条数据到 traffic-raw-data
+[23:32:10] 发送 50 条数据到 traffic-raw-data
+[23:32:15] 发送 50 条数据到 traffic-raw-data
+[23:32:20] 发送 50 条数据到 traffic-raw-data
+[23:32:25] 发送 50 条数据到 traffic-raw-data
+[23:32:30] 发送 50 条数据到 traffic-raw-data
+[23:32:35] 发送 50 条数据到 traffic-raw-data
+[23:32:40] 发送 50 条数据到 traffic-raw-data
+[23:32:45] 发送 50 条数据到 traffic-raw-data
+[23:32:50] 发送 50 条数据到 traffic-raw-data
+[23:32:55] 发送 50 条数据到 traffic-raw-data
+[23:33:00] 发送 50 条数据到 traffic-raw-data
+[23:33:05] 发送 50 条数据到 traffic-raw-data
+[23:33:10] 发送 50 条数据到 traffic-raw-data
+[23:33:15] 发送 50 条数据到 traffic-raw-data
+[23:33:20] 发送 50 条数据到 traffic-raw-data
+[23:33:25] 发送 50 条数据到 traffic-raw-data
+[23:33:30] 发送 50 条数据到 traffic-raw-data
+[23:33:35] 发送 50 条数据到 traffic-raw-data
+[23:33:40] 发送 50 条数据到 traffic-raw-data
+[23:33:45] 发送 50 条数据到 traffic-raw-data
+[23:33:50] 发送 50 条数据到 traffic-raw-data
+[23:33:55] 发送 50 条数据到 traffic-raw-data
+[23:34:00] 发送 50 条数据到 traffic-raw-data
+[23:34:05] 发送 50 条数据到 traffic-raw-data
+[23:34:10] 发送 50 条数据到 traffic-raw-data
+[23:34:15] 发送 50 条数据到 traffic-raw-data
+[23:34:20] 发送 50 条数据到 traffic-raw-data
+[23:34:25] 发送 50 条数据到 traffic-raw-data
+[23:34:30] 发送 50 条数据到 traffic-raw-data
+[23:34:35] 发送 50 条数据到 traffic-raw-data
+[23:34:40] 发送 50 条数据到 traffic-raw-data
+[23:34:45] 发送 50 条数据到 traffic-raw-data
+[23:34:50] 发送 50 条数据到 traffic-raw-data
+[23:34:55] 发送 50 条数据到 traffic-raw-data
+[23:35:00] 发送 50 条数据到 traffic-raw-data
+[23:35:05] 发送 50 条数据到 traffic-raw-data
+[23:35:10] 发送 50 条数据到 traffic-raw-data
+[23:35:15] 发送 50 条数据到 traffic-raw-data
+[23:35:20] 发送 50 条数据到 traffic-raw-data
+[23:35:25] 发送 50 条数据到 traffic-raw-data
+[23:35:30] 发送 50 条数据到 traffic-raw-data
+[23:35:35] 发送 50 条数据到 traffic-raw-data
+[23:35:40] 发送 50 条数据到 traffic-raw-data
+[23:35:45] 发送 50 条数据到 traffic-raw-data
+[23:35:50] 发送 50 条数据到 traffic-raw-data
+[23:35:55] 发送 50 条数据到 traffic-raw-data
+[23:36:00] 发送 50 条数据到 traffic-raw-data
+[23:36:05] 发送 50 条数据到 traffic-raw-data
+[23:36:10] 发送 50 条数据到 traffic-raw-data
+[23:36:15] 发送 50 条数据到 traffic-raw-data
+[23:36:20] 发送 50 条数据到 traffic-raw-data
+[23:36:25] 发送 50 条数据到 traffic-raw-data
+[23:36:30] 发送 50 条数据到 traffic-raw-data
+[23:36:35] 发送 50 条数据到 traffic-raw-data
+[23:36:40] 发送 50 条数据到 traffic-raw-data
+[23:36:45] 发送 50 条数据到 traffic-raw-data
+[23:36:50] 发送 50 条数据到 traffic-raw-data
+[23:36:56] 发送 50 条数据到 traffic-raw-data
+[23:37:01] 发送 50 条数据到 traffic-raw-data
+[23:37:06] 发送 50 条数据到 traffic-raw-data
+[23:37:11] 发送 50 条数据到 traffic-raw-data
+[23:37:16] 发送 50 条数据到 traffic-raw-data
+
+[模拟器] 已停止
+[模拟器] 启动，连接 Kafka: 127.0.0.1:9092
+[模拟器] 目标 Topic: traffic-raw-data
+[模拟器] 共加载 106 个检测器，每 5 秒发送一批数据...
+[模拟器] 按 Ctrl+C 停止
+
+[10:42:33] 发送 50 条数据到 traffic-raw-data
+[10:42:38] 发送 50 条数据到 traffic-raw-data
+[10:42:43] 发送 50 条数据到 traffic-raw-data
+[10:42:48] 发送 50 条数据到 traffic-raw-data
+[10:42:53] 发送 50 条数据到 traffic-raw-data
+[10:42:58] 发送 50 条数据到 traffic-raw-data
+[10:43:03] 发送 50 条数据到 traffic-raw-data
+[10:43:08] 发送 50 条数据到 traffic-raw-data
+[10:43:13] 发送 50 条数据到 traffic-raw-data
+[10:43:18] 发送 50 条数据到 traffic-raw-data
+
+[模拟器] 已停止
+%3|1779937297.443|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2140ms in state CONNECT)
+%3|1779937300.034|FAIL|rdkafka#producer-1| [thrd:localhost:9092/0]: localhost:9092/0: Connect to ipv6#[::1]:9092 failed: Unknown error (after 2077ms in state CONNECT, 1 identical error(s) suppressed)
