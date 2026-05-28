@@ -78,7 +78,7 @@ def main():
     print(f"[模拟器] 目标 Topic: {KAFKA_TOPIC_RAW}")
 
     producer = Producer({
-        "bootstrap.servers": "127.0.0.1:9092",
+        "bootstrap.servers": KAFKA_BOOTSTRAP_SERVERS,
         "acks": 1,
     })
 

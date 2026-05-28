@@ -2,13 +2,11 @@
 import time
 from flask import Blueprint, jsonify
 from flask_backend.services.job_service import (
-    _JOBS, _running_processes, launch_job, stop_job_process,
+    _JOBS, _LOG_DIR, _running_processes, launch_job, stop_job_process,
     get_running_process, set_running_process, is_job_alive,
 )
 
 bp = Blueprint("page_console", __name__, url_prefix="/api/console")
-
-_LOG_DIR = "D:\\Projects\\sparkDesign\\flask_backend\\logs"
 
 
 @bp.route("/jobs", methods=["GET"])

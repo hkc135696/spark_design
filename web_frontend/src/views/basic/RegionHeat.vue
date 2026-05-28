@@ -12,8 +12,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="row in data" :key="row.district">
-            <td class="rank">{{ row.rank_position }}</td>
+          <tr v-for="(row, index) in data" :key="row.district">
+            <td class="rank">{{ index + 1 }}</td>
             <td>{{ row.district }}</td>
             <td class="num">{{ row.total_vehicles }}</td>
             <td class="num" :class="heatClass(row.avg_congestion)">{{ row.avg_congestion }}</td>

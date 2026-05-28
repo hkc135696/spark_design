@@ -1,0 +1,24 @@
+# Local path config - each team member has their own copy (do not commit)
+local_config.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Spark checkpoints and logs
+checkpoints/
+flask_backend/logs/
+*.log
+
+# Node
+web_frontend/node_modules/
+web_frontend/dist/
+
+# IDE
+.idea/
+.vscode/
+*.iml

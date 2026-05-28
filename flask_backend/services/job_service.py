@@ -4,16 +4,52 @@
 """
 import os
 import sys
+import pathlib
 import subprocess
 import psutil
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 _LOG_DIR = os.path.join(PROJECT_ROOT, "logs")
 
-_SPARK_SUBMIT = os.getenv(
-    "SPARK_HOME",
-    r"D:\Spark\spark-3.3.4-bin-hadoop3"
-) + r"\bin\spark-submit.cmd"
+
+def _load_local_config():
+    """从 local_config.env 加载路径配置到 os.environ（不覆盖已有值）"""
+    here = pathlib.Path(__file__).resolve()
+    env_file = next(
+        (p / "local_config.env" for p in here.parents if (p / "local_config.env").exists()),
+        None,
+    )
+    if env_file is None:
+        return
+    with env_file.open(encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            key, _, value = line.partition("=")
+            key, value = key.strip(), value.strip()
+            if key and key not in os.environ:
+                os.environ[key] = value
+
+
+_load_local_config()
+
+
+def _find_spark_submit():
+    """从 SPARK_HOME 环境变量定位 spark-submit.cmd（由 local_config.env 注入）"""
+    spark_home = os.getenv("SPARK_HOME")
+    if spark_home:
+        candidate = os.path.join(spark_home, "bin", "spark-submit.cmd")
+        if os.path.isfile(candidate):
+            return candidate
+    import shutil
+    found = shutil.which("spark-submit.cmd") or shutil.which("spark-submit")
+    if found:
+        return found
+    return os.path.join("spark", "bin", "spark-submit.cmd")
+
+_SPARK_SUBMIT = _find_spark_submit()
+print(f"[job_service] spark-submit: {_SPARK_SUBMIT}")
 
 _JOBS = {
     "simulator": {
