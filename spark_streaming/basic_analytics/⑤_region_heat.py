@@ -74,7 +74,7 @@ def main():
     """)
 
     (heat_stats_df.writeStream
-        .outputMode("append")
+        .outputMode("update")
         .trigger(processingTime="30 seconds")
         .foreachBatch(foreach_batch_mysql(
             "region_heat_rank",
