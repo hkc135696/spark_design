@@ -20,3 +20,24 @@ def congestion_index_list():
         LIMIT 100
     """)
     return jsonify({"code": 0, "data": rows})
+
+
+@bp.route("/trend", methods=["GET"])
+def congestion_index_trend():
+    """
+    获取拥堵指数变化趋势（按道路类型分组的时间序列）
+    数据来源: road_stats_realtime 表（包含历史时间窗口数据）
+    """
+    from flask_backend.services.mysql_service import query
+    rows = query("""
+        SELECT
+            DATE_FORMAT(time_window_start, '%H:%i') AS time_label,
+            road_type,
+            ROUND(AVG(avg_congestion), 3) AS avg_congestion
+        FROM road_stats_realtime
+        WHERE time_window_start >= DATE_SUB(NOW(), INTERVAL 60 MINUTE)
+        GROUP BY time_label, road_type, time_window_start
+        ORDER BY time_window_start ASC, road_type
+        LIMIT 500
+    """)
+    return jsonify({"code": 0, "data": rows})

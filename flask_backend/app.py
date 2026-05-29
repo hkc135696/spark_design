@@ -28,14 +28,14 @@ socketio = SocketIO(app, cors_allowed_origins="*", async_mode="threading")
 app.register_blueprint(page_console.bp)
 app.register_blueprint(page_collection.bp)
 app.register_blueprint(page_cleaning.bp)
-app.register_blueprint(page_basic.bp)
 app.register_blueprint(page_advanced.bp)
-# 基础分析子功能
+# 基础分析子功能（必须在 page_basic 之前注册，避免路由被覆盖）
 app.register_blueprint(road_flow.bp)
 app.register_blueprint(avg_speed.bp)
 app.register_blueprint(congestion_index.bp)
 app.register_blueprint(peak_traffic.bp)
 app.register_blueprint(region_heat.bp)
+app.register_blueprint(page_basic.bp)
 # 进阶分析子功能
 app.register_blueprint(sliding_window.bp)
 app.register_blueprint(hotspot_topn.bp)
