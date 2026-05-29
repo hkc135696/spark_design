@@ -250,42 +250,67 @@ def main():
                 pass
 
             records = [row.asDict() for row in raw_rows]
-            for rec in records:
-                for k in rec:
-                    if rec[k] is None:
-                        rec[k] = ""
 
-            # 按清洗 SQL 的 WHERE 条件统计：过滤掉 detector_id 或 timestamp 为空的记录
+            # 统计并丢弃：关键字段缺失（detector_id / timestamp）
+            bad_missing_key = [
+                r for r in records
+                if not (r.get("detector_id") and str(r.get("detector_id")).strip())
+                or not (r.get("timestamp") and str(r.get("timestamp")).strip())
+            ]
+            if bad_missing_key:
+                append_error_log(batch_id, "丢弃：detector_id 或 timestamp 为空", [
+                    {"detector_id": r.get("detector_id") or "(空)", "timestamp": r.get("timestamp") or "(空)"}
+                    for r in bad_missing_key
+                ][:3])
+
             filtered_records = [
                 r for r in records
-                if r.get("detector_id") is not None
-                and r.get("detector_id", "").strip() != ""
-                and r.get("timestamp") is not None
-                and r.get("timestamp", "").strip() != ""
+                if (r.get("detector_id") and str(r.get("detector_id")).strip())
+                and (r.get("timestamp") and str(r.get("timestamp")).strip())
             ]
-            filtered_count = raw_count - len(filtered_records)
 
-            # 写错误日志
-            if filtered_count > 0:
-                bad_examples = [
-                    {"detector_id": r.get("detector_id") or "(空)", "timestamp": r.get("timestamp") or "(空)"}
-                    for r in records
-                    if not (r.get("detector_id") and str(r.get("detector_id", "")).strip())
-                    or not (r.get("timestamp") and str(r.get("timestamp", "")).strip())
-                ]
-                append_error_log(batch_id, "detector_id 或 timestamp 为空", bad_examples[:3])
-
-            # 按清洗 SQL 的 CASE 规则标准化数值字段（不丢弃数据，仅修正）
+            # 丢弃策略：坏数据直接丢弃，但保留日志。
+            # 数值字段：尽量转型，失败则丢弃。
+            bad_numeric = []
+            cleaned_records = []
             for r in filtered_records:
-                r["total_flow"] = max(0, int(r.get("total_flow") or 0))
-                spd = float(r.get("avg_speed") or 0)
-                r["avg_speed"] = 0 if spd < 0 or spd > 200 else spd
-                occ = float(r.get("occupancy") or 0)
-                r["occupancy"] = 0 if occ < 0 else (100 if occ > 100 else occ)
-                ci = float(r.get("congestion_index") or 0)
-                r["congestion_index"] = 0.0 if ci < 0 else (1.0 if ci > 1 else ci)
+                try:
+                    total_flow = int(r.get("total_flow"))
+                    avg_speed = float(r.get("avg_speed"))
+                    occupancy = float(r.get("occupancy"))
+                    congestion_index = float(r.get("congestion_index"))
+                except Exception:
+                    bad_numeric.append({
+                        "detector_id": r.get("detector_id"),
+                        "timestamp": r.get("timestamp"),
+                        "total_flow": r.get("total_flow"),
+                        "avg_speed": r.get("avg_speed"),
+                        "occupancy": r.get("occupancy"),
+                        "congestion_index": r.get("congestion_index"),
+                    })
+                    continue
 
-            final_clean_count = len(filtered_records)
+                # 仍保留原先的“夹逼/修正”策略（但这是在数值可解析的前提下）
+                r["total_flow"] = max(0, total_flow)
+                r["avg_speed"] = 0.0 if avg_speed < 0 or avg_speed > 200 else avg_speed
+                r["occupancy"] = 0.0 if occupancy < 0 else (100.0 if occupancy > 100 else occupancy)
+                r["congestion_index"] = 0.0 if congestion_index < 0 else (1.0 if congestion_index > 1 else congestion_index)
+
+                # 关键维度字段缺失也丢弃（不影响 schema，但会影响聚合质量）
+                if not (r.get("district") and str(r.get("district")).strip()):
+                    bad_numeric.append({"detector_id": r.get("detector_id"), "timestamp": r.get("timestamp"), "reason": "district 为空"})
+                    continue
+
+                cleaned_records.append(r)
+
+            if bad_numeric:
+                append_error_log(batch_id, "丢弃：数值字段无法解析或维度缺失", bad_numeric[:3])
+
+            final_clean_count = len(cleaned_records)
+
+            # 最终输出使用 cleaned_records
+            filtered_records = cleaned_records
+            filtered_count = raw_count - len(filtered_records)
 
             cumulative["processed"] += final_clean_count
             cumulative["dedup"] += dedup_count

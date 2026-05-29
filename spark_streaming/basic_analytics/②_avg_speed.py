@@ -9,7 +9,7 @@ spark_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__f
 sys.path.insert(0, spark_root)
 
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, from_json, to_timestamp, round, percentile_approx, current_timestamp
+from pyspark.sql.functions import col, from_json, to_timestamp, round, percentile_approx, current_timestamp, avg, stddev, max as spark_max, min as spark_min, count
 
 from spark_streaming import (
     SPARK_APP_NAME, SPARK_CONFIG, KAFKA_BOOTSTRAP_SERVERS,
@@ -24,7 +24,13 @@ def main():
 
     spark = SparkSession.builder \
         .config("spark.local.dir", spark_local_dir) \
-        .config("spark.sql.streaming.fileSink.log.enabled", "false")
+        .config("spark.sql.streaming.fileSink.log.enabled", "false") \
+        .config("spark.sql.streaming.stateStore.stateSchemaCheck", "false") \
+        .config("spark.sql.streaming.stateStore.maintenance.interval", "86400") \
+        .config(
+            "spark.sql.streaming.stateStore.stateStoreProviderClass",
+            "org.apache.spark.sql.execution.streaming.state.RocksDBStateStoreProvider",
+        )
     for k, v in SPARK_CONFIG.items():
         spark = spark.config(k, v)
     spark = spark.getOrCreate()
@@ -37,7 +43,7 @@ def main():
         .format("kafka")
         .option("kafka.bootstrap.servers", KAFKA_BOOTSTRAP_SERVERS)
         .option("subscribe", KAFKA_TOPIC_CLEANED)
-        .option("startingOffsets", "latest")
+        .option("startingOffsets", "earliest")
         .option("kafka.group.id", "spark-avg-speed")
         .option("failOnDataLoss", "false")
         .load()
@@ -49,34 +55,33 @@ def main():
         ).select("data.*")
     )
 
-    parsed_df = parsed_df.withColumn("ts", to_timestamp(col("timestamp"), "yyyy-MM-dd HH:mm:ss"))
-    parsed_df.createOrReplaceTempView("traffic_view")
-
-    # 平均车速统计（1分钟窗口 + 标准差/中位数）
-    speed_stats_df = spark.sql("""
-        SELECT
-            detector_id,
-            detector_name,
-            district,
-            ROUND(AVG(CAST(avg_speed AS DOUBLE)), 2) AS avg_speed,
-            ROUND(STDDEV(CAST(avg_speed AS DOUBLE)), 2) AS speed_stddev,
-            ROUND(MAX(CAST(avg_speed AS DOUBLE)), 2) AS max_speed,
-            ROUND(MIN(CAST(avg_speed AS DOUBLE)), 2) AS min_speed,
-            ROUND(PERCENTILE_APPROX(CAST(avg_speed AS DOUBLE), 0.5), 2) AS median_speed,
-            COUNT(*) AS data_points,
-            CURRENT_TIMESTAMP() AS update_time
-        FROM traffic_view
-        WHERE avg_speed >= 0
-        GROUP BY detector_id, detector_name, district
-    """)
+    speed_stats_df = (
+        parsed_df
+        .filter(col("detector_id").isNotNull() & col("timestamp").isNotNull())
+        .withColumn("ts", to_timestamp(col("timestamp"), "yyyy-MM-dd HH:mm:ss"))
+        .filter(col("ts").isNotNull())
+        .filter(col("avg_speed").cast("double").isNotNull() & (col("avg_speed").cast("double") >= 0))
+        .groupBy("detector_id", "detector_name", "district")
+        .agg(
+            round(avg(col("avg_speed").cast("double")), 2).alias("avg_speed"),
+            round(stddev(col("avg_speed").cast("double")), 2).alias("speed_stddev"),
+            round(spark_max(col("avg_speed").cast("double")), 2).alias("max_speed"),
+            round(spark_min(col("avg_speed").cast("double")), 2).alias("min_speed"),
+            round(percentile_approx(col("avg_speed").cast("double"), 0.5), 2).alias("median_speed"),
+            count("*").alias("data_points"),
+            current_timestamp().alias("update_time"),
+        )
+    )
 
     (speed_stats_df.writeStream
-        .outputMode("append")
+        .outputMode("update")
         .trigger(processingTime="30 seconds")
-        .foreachBatch(foreach_batch_mysql(
-            "speed_stats",
-            primary_keys=["detector_id"],
-        ))
+        .foreachBatch(
+            foreach_batch_mysql(
+                "speed_stats",
+                primary_keys=["detector_id"],
+            )
+        )
         .option("checkpointLocation", SPARK_CHECKPOINT_DIR + "/basic/avg_speed")
         .start())
 

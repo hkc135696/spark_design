@@ -9,21 +9,23 @@
         <thead>
           <tr>
             <th>日期</th><th>小时</th><th>区域</th><th>时段类型</th>
-            <th>总流量</th><th>平均车速</th><th>平均拥堵</th><th>最大拥堵</th>
+            <th>总流量</th><th>变化(较上一小时)</th><th>变化率</th><th>平均车速</th><th>平均拥堵</th><th>最大拥堵</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="row in data" :key="row.stat_date + row.stat_hour + row.district">
-            <td>{{ row.stat_date }}</td>
+            <td>{{ formatDate(row.stat_date) }}</td>
             <td class="num">{{ row.stat_hour }}:00</td>
             <td>{{ row.district }}</td>
             <td><span class="peak-tag" :class="row.peak_type">{{ row.peak_type }}</span></td>
             <td class="num">{{ row.total_vehicles }}</td>
+            <td class="num">{{ formatDelta(pick(row, 'delta_vehicles', 'deltaVehicles')) }}</td>
+            <td class="num">{{ formatPct(pick(row, 'pct_change', 'pctChange')) }}</td>
             <td class="num">{{ row.avg_speed }}</td>
             <td class="num">{{ row.avg_congestion }}</td>
             <td class="num">{{ row.max_congestion }}</td>
           </tr>
-          <tr v-if="data.length === 0"><td colspan="8" class="empty">暂无数据</td></tr>
+          <tr v-if="data.length === 0"><td colspan="10" class="empty">暂无数据</td></tr>
         </tbody>
       </table>
     </div>
@@ -36,8 +38,56 @@ import { getPeakTrafficStats } from '../../utils/api.js'
 
 const data = ref([])
 
+function formatDate(d) {
+  // 后端可能返回 "2026-05-29" 或 "Fri, 29 May 2026 00:00:00 GMT"
+  if (!d) return ''
+  if (typeof d === 'string') {
+    // 优先保留 yyyy-MM-dd
+    const m = d.match(/\d{4}-\d{2}-\d{2}/)
+    if (m) return m[0]
+    const dt = new Date(d)
+    if (!Number.isNaN(dt.getTime())) return dt.toISOString().slice(0, 10)
+    return d
+  }
+  const dt = new Date(d)
+  if (!Number.isNaN(dt.getTime())) return dt.toISOString().slice(0, 10)
+  return String(d)
+}
+
+function pick(obj, ...keys) {
+  for (const k of keys) {
+    if (obj && Object.prototype.hasOwnProperty.call(obj, k)) return obj[k]
+  }
+  return undefined
+}
+
+function formatDelta(v) {
+  if (v === null || v === undefined) return '-'
+  const n = Number(v)
+  if (Number.isNaN(n)) return String(v)
+  const sign = n > 0 ? '+' : ''
+  return `${sign}${Math.trunc(n)}`
+}
+
+function formatPct(v) {
+  if (v === null || v === undefined) return '-'
+  const n = Number(v)
+  if (Number.isNaN(n)) return String(v)
+  return `${(n * 100).toFixed(2)}%`
+}
+
 async function loadData() {
-  try { data.value = await getPeakTrafficStats() } catch (e) { console.error(e) }
+  try {
+    const rows = await getPeakTrafficStats()
+    if (Array.isArray(rows) && rows.length) {
+      // 调试：确认接口返回字段名（可在浏览器控制台查看）
+      console.log('[PeakTraffic] first row keys:', Object.keys(rows[0]))
+      console.log('[PeakTraffic] first row:', rows[0])
+    }
+    data.value = rows
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 onMounted(loadData)

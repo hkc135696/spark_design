@@ -20,7 +20,7 @@ def build_schema():
     return StructType(fields)
 
 
-def foreach_batch_mysql(table_name, primary_keys=None):
+def foreach_batch_mysql(table_name, primary_keys=None, post_sql=None):
     """
     通用 foreachBatch 写入 MySQL 回调工厂。
 
@@ -31,13 +31,19 @@ def foreach_batch_mysql(table_name, primary_keys=None):
     primary_keys : list[str], optional
         联合主键列名，用于生成 REPLACE INTO 语句实现 upsert。
         如果不指定，则使用 append 模式（可能产生重复数据）。
+    post_sql : str, optional
+        每个 batch 写入完成后要执行的 SQL（可用于派生字段回填、修正等）。
 
     用法::
 
         (df.writeStream
             .outputMode("append")
             .trigger(processingTime="30 seconds")
-            .foreachBatch(foreach_batch_mysql("road_stats_realtime", primary_keys=["detector_id", "time_window_start"]))
+            .foreachBatch(foreach_batch_mysql(
+                "road_stats_realtime",
+                primary_keys=["detector_id", "time_window_start"],
+                post_sql="...",
+            ))
             .option("checkpointLocation", ...)
             .start())
     """
@@ -73,6 +79,10 @@ def foreach_batch_mysql(table_name, primary_keys=None):
 
                 batch = [tuple(row.asDict().get(c) for c in cols) for row in rows]
                 cur.executemany(sql, batch)
+
+                if post_sql:
+                    cur.execute(post_sql)
+
                 mysql_conn.commit()
             print(f"[MySQL] Batch {batch_id} 写入 {table_name}，{len(rows)} 条")
         finally:

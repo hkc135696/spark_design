@@ -69,7 +69,9 @@ def congestion_index_list():
 @bp.route("/peak-traffic/stats", methods=["GET"])
 def peak_traffic_stats():
     """高峰时段统计"""
-    data = getPeakTrafficStats()
+    days = int(request.args.get("days", 7))
+    limit = int(request.args.get("limit", 200))
+    data = getPeakTrafficStats(days=days, limit=limit)
     return jsonify({"code": 0, "data": data})
 
 
