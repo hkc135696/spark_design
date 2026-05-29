@@ -62,8 +62,8 @@ SPARK_CONFIG = {
 # Spark jars 目录 — 从 SPARK_HOME 环境变量获取（由 local_config.env 注入）
 # ============================================================
 _JAR_NAMES = [
-    "spark-sql-kafka_2.12-3.3.4.jar",
-    "spark-token-provider-kafka_2.12-3.3.4.jar",
+    "spark-sql-kafka-0-10_2.12-3.3.4.jar",
+    "spark-token-provider-kafka-0-10_2.12-3.3.4.jar",
     "kafka-clients-2.8.1.jar",
     "commons-pool2-2.11.1.jar",
     "lz4-java-1.8.0.jar",

@@ -188,6 +188,14 @@ def launch_job(job_def):
         raise FileNotFoundError("作业脚本未实现")
     cmd = [part.replace("{script}", script) for part in job_def["cmd_template"]]
     env = os.environ.copy()
+    # PySpark 3.3.4 不兼容 Python 3.13（typing.io 已移除），确保使用兼容版本
+    for key in ("PYSPARK_PYTHON", "PYSPARK_DRIVER_PYTHON"):
+        if key not in env or not env[key]:
+            env[key] = env.get("PYTHON_EXE", sys.executable)
+    pyspark_python = env.get("PYSPARK_PYTHON", "")
+    if pyspark_python and os.path.exists(pyspark_python):
+        pyspark_dir = os.path.dirname(pyspark_python)
+        env["PATH"] = pyspark_dir + ";" + env.get("PATH", "")
     startupinfo = subprocess.STARTUPINFO()
     startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
     startupinfo.wShowWindow = subprocess.SW_HIDE

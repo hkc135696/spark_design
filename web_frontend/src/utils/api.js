@@ -68,6 +68,9 @@ export const getAvgSpeedList = () =>
 export const getCongestionIndexList = () =>
   api.get('/basic/congestion-index/list').then(r => r.data.data)
 
+export const getCongestionIndexTrend = () =>
+  api.get('/basic/congestion-index/trend').then(r => r.data.data)
+
 export const getPeakTrafficStats = () =>
   api.get('/basic/peak-traffic/stats').then(r => r.data.data)
 

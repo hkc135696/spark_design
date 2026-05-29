@@ -12,6 +12,7 @@ venv/
 # Spark checkpoints and logs
 checkpoints/
 flask_backend/logs/
+temp_spark/
 *.log
 
 # Node

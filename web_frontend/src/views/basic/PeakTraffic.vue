@@ -4,6 +4,9 @@
       <h3>④ 统计高峰时段流量变化</h3>
       <button class="btn btn-gray btn-sm" @click="loadData">&#8635; 刷新</button>
     </div>
+    <div class="ring-chart-wrapper">
+      <div class="ring-chart-container" ref="chartRef"></div>
+    </div>
     <div class="table-wrapper">
       <table class="data-table">
         <thead>
@@ -33,10 +36,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { getPeakTrafficStats } from '../../utils/api.js'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import * as echarts from 'echarts'
+import { getPeakTrafficStats, getPeakSummary } from '../../utils/api.js'
 
 const data = ref([])
+const chartRef = ref(null)
+let chart = null
 
 function formatDate(d) {
   // 后端可能返回 "2026-05-29" 或 "Fri, 29 May 2026 00:00:00 GMT"
@@ -76,11 +82,97 @@ function formatPct(v) {
   return `${(n * 100).toFixed(2)}%`
 }
 
+function drawRingChart(summary) {
+  if (!chartRef.value) return
+  if (!chart) {
+    chart = echarts.init(chartRef.value)
+  }
+  const peakColors = {
+    '早高峰': '#f85149',
+    '晚高峰': '#d29922',
+    '平峰': '#3fb950',
+    '夜间': '#58a6ff',
+  }
+  const total = summary.reduce((s, r) => s + (r.total_vehicles || 0), 0)
+  const seriesData = summary.map(r => ({
+    name: r.peak_type,
+    value: r.total_vehicles || 0,
+    itemStyle: { color: peakColors[r.peak_type] || '#8b949e' }
+  }))
+  chart.setOption({
+    tooltip: {
+      trigger: 'item',
+      backgroundColor: '#21262d',
+      borderColor: '#30363d',
+      textStyle: { color: '#e6edf3', fontSize: 13 },
+      formatter: (p) => {
+        const pct = total > 0 ? ((p.value / total) * 100).toFixed(1) : 0
+        return `${p.marker} ${p.name}<br/>流量: ${p.value.toLocaleString()} 辆<br/>占比: ${pct}%`
+      }
+    },
+    graphic: [{
+      type: 'text',
+      left: 'center',
+      top: 'center',
+      style: {
+        text: `总计\n${total.toLocaleString()}`,
+        textAlign: 'center',
+        fill: '#e6edf3',
+        fontSize: 14,
+        lineHeight: 20,
+        fontWeight: 'bold',
+      }
+    }],
+    series: [{
+      type: 'pie',
+      radius: ['52%', '75%'],
+      center: ['50%', '50%'],
+      avoidLabelOverlap: false,
+      itemStyle: {
+        borderColor: '#161b22',
+        borderWidth: 3,
+        borderRadius: 2,
+      },
+      label: {
+        show: true,
+        position: 'outside',
+        formatter: '{b}\n{d}%',
+        color: '#8b949e',
+        fontSize: 12,
+        lineHeight: 18,
+      },
+      labelLine: {
+        lineStyle: { color: '#30363d' }
+      },
+      emphasis: {
+        scaleSize: 8,
+        label: { fontSize: 15, fontWeight: 'bold' }
+      },
+      data: seriesData
+    }]
+  })
+}
+
+async function loadSummary() {
+  try {
+    const summary = await getPeakSummary()
+    if (summary && summary.length) {
+      await nextTick()
+      drawRingChart(summary)
+    }
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+function handleResize() {
+  chart?.resize()
+}
+
 async function loadData() {
   try {
     const rows = await getPeakTrafficStats()
     if (Array.isArray(rows) && rows.length) {
-      // 调试：确认接口返回字段名（可在浏览器控制台查看）
       console.log('[PeakTraffic] first row keys:', Object.keys(rows[0]))
       console.log('[PeakTraffic] first row:', rows[0])
     }
@@ -90,11 +182,22 @@ async function loadData() {
   }
 }
 
-onMounted(loadData)
+onMounted(() => {
+  loadData()
+  loadSummary()
+  window.addEventListener('resize', handleResize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
+  chart?.dispose()
+})
 </script>
 
 <style scoped>
 .peak-traffic { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; }
+.ring-chart-wrapper { display: flex; justify-content: center; margin-bottom: 20px; }
+.ring-chart-container { width: 420px; height: 380px; background: #0d1117; border: 1px solid #30363d; border-radius: 12px; box-shadow: 0 0 24px rgba(88, 166, 255, 0.06), 0 0 6px rgba(88, 166, 255, 0.04); }
 .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
 .section-header h3 { margin: 0; font-size: 16px; font-weight: 600; color: #e6edf3; }
 .table-wrapper { overflow-x: auto; }

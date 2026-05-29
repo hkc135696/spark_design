@@ -199,6 +199,8 @@ CREATE TABLE region_hourly_stats (
     stat_date DATE NOT NULL COMMENT '统计日期',
     stat_hour TINYINT NOT NULL COMMENT '统计小时(0-23)',
     total_vehicles BIGINT DEFAULT 0 COMMENT '小时总车流量',
+    delta_vehicles BIGINT DEFAULT NULL COMMENT '较上一小时车流量变化',
+    pct_change DECIMAL(6,4) DEFAULT NULL COMMENT '较上一小时变化率',
     avg_speed DECIMAL(5,2) DEFAULT 0 COMMENT '小时平均车速',
     avg_congestion DECIMAL(4,3) DEFAULT 0 COMMENT '小时平均拥堵指数',
     max_congestion DECIMAL(4,3) DEFAULT 0 COMMENT '小时最大拥堵指数',
@@ -209,3 +211,13 @@ CREATE TABLE region_hourly_stats (
     INDEX idx_date (stat_date),
     INDEX idx_hour (stat_hour)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='区域小时统计汇总表';
+
+-- ============================================================
+-- 10. 区域小时统计表 - 增量迁移（对已有数据库执行）
+-- ============================================================
+-- ALTER TABLE region_hourly_stats ADD COLUMN IF NOT EXISTS delta_vehicles BIGINT DEFAULT NULL COMMENT '较上一小时车流量变化' AFTER total_vehicles;
+-- ALTER TABLE region_hourly_stats ADD COLUMN IF NOT EXISTS pct_change DECIMAL(6,4) DEFAULT NULL COMMENT '较上一小时变化率' AFTER delta_vehicles;
+
+-- MySQL 8.0 以下版本不支持 IF NOT EXISTS，请使用以下语句：
+ALTER TABLE region_hourly_stats ADD COLUMN delta_vehicles BIGINT DEFAULT NULL COMMENT '较上一小时车流量变化' AFTER total_vehicles;
+ALTER TABLE region_hourly_stats ADD COLUMN pct_change DECIMAL(6,4) DEFAULT NULL COMMENT '较上一小时变化率' AFTER delta_vehicles;
