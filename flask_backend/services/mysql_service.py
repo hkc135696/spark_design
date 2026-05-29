@@ -291,18 +291,20 @@ def getCongestionIndexList():
     """)
 
 
-def getPeakTrafficStats():
-    """高峰时段统计（最近 24 小时）"""
-    return query("""
+def getPeakTrafficStats(days=7, limit=200):
+    """高峰时段统计（最近 N 天）"""
+    days = int(days or 7)
+    limit = int(limit or 200)
+    return query(f"""
         SELECT
             district, stat_date, stat_hour,
-            total_vehicles, avg_speed,
-            avg_congestion, max_congestion, avg_occupancy,
+            total_vehicles, delta_vehicles, pct_change,
+            avg_speed, avg_congestion, max_congestion, avg_occupancy,
             peak_type, update_time
         FROM region_hourly_stats
-        WHERE stat_date >= CURDATE()
+        WHERE stat_date >= DATE_SUB(CURDATE(), INTERVAL {days} DAY)
         ORDER BY stat_date DESC, stat_hour DESC
-        LIMIT 100
+        LIMIT {limit}
     """)
 
 

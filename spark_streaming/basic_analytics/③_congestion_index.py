@@ -9,12 +9,26 @@ spark_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__f
 sys.path.insert(0, spark_root)
 
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, from_json, to_timestamp, round, when, current_timestamp
-
+from pyspark.sql.functions import (
+    col,
+    from_json,
+    to_timestamp,
+    round,
+    current_timestamp,
+    avg,
+    sum as spark_sum,
+    least,
+    when,
+    lit,
+)
 from spark_streaming import (
-    SPARK_APP_NAME, SPARK_CONFIG, KAFKA_BOOTSTRAP_SERVERS,
-    KAFKA_TOPIC_CLEANED, MYSQL_URL, MYSQL_USER, MYSQL_PASSWORD,
-    TRAFFIC_SCHEMA, SPARK_CHECKPOINT_DIR, build_schema, foreach_batch_mysql,
+    SPARK_APP_NAME,
+    SPARK_CONFIG,
+    KAFKA_BOOTSTRAP_SERVERS,
+    KAFKA_TOPIC_CLEANED,
+    SPARK_CHECKPOINT_DIR,
+    build_schema,
+    foreach_batch_mysql,
 )
 
 
@@ -24,7 +38,13 @@ def main():
 
     spark = SparkSession.builder \
         .config("spark.local.dir", spark_local_dir) \
-        .config("spark.sql.streaming.fileSink.log.enabled", "false")
+        .config("spark.sql.streaming.fileSink.log.enabled", "false") \
+        .config("spark.sql.streaming.stateStore.stateSchemaCheck", "false") \
+        .config("spark.sql.streaming.stateStore.maintenance.interval", "86400") \
+        .config(
+            "spark.sql.streaming.stateStore.stateStoreProviderClass",
+            "org.apache.spark.sql.execution.streaming.state.RocksDBStateStoreProvider",
+        )
     for k, v in SPARK_CONFIG.items():
         spark = spark.config(k, v)
     spark = spark.getOrCreate()
@@ -37,7 +57,7 @@ def main():
         .format("kafka")
         .option("kafka.bootstrap.servers", KAFKA_BOOTSTRAP_SERVERS)
         .option("subscribe", KAFKA_TOPIC_CLEANED)
-        .option("startingOffsets", "latest")
+        .option("startingOffsets", "earliest")
         .option("kafka.group.id", "spark-congestion-index")
         .option("failOnDataLoss", "false")
         .load()
@@ -50,42 +70,63 @@ def main():
     )
 
     parsed_df = parsed_df.withColumn("ts", to_timestamp(col("timestamp"), "yyyy-MM-dd HH:mm:ss"))
-    parsed_df.createOrReplaceTempView("traffic_view")
 
     # 道路拥堵指数（复合公式：流量 * 道路系数 * 速度影响系数）
-    congestion_df = spark.sql("""
-        SELECT
-            detector_id,
-            detector_name,
-            district,
-            road_type,
-            SUM(CAST(total_flow AS INT)) AS total_vehicles,
-            ROUND(AVG(CAST(congestion_index AS DOUBLE)), 3) AS raw_avg_congestion,
-            ROUND(LEAST(1.0,
-                (SUM(CAST(total_flow AS INT)) / 200.0) *
-                CASE road_type
-                    WHEN '高速'   THEN 0.8
-                    WHEN '快速路'  THEN 0.85
-                    WHEN '主干路'  THEN 1.0
-                    WHEN '次干路'  THEN 1.2
-                    WHEN '支路'   THEN 1.5
-                    ELSE 1.0
-                END *
-                (0.5 + (1 - AVG(CAST(avg_speed AS DOUBLE)) / 80.0) * 0.5)
-            ), 3) AS calculated_congestion,
-            ROUND(AVG(CAST(avg_speed AS DOUBLE)), 2) AS avg_speed,
-            CURRENT_TIMESTAMP() AS update_time
-        FROM traffic_view
-        GROUP BY detector_id, detector_name, district, road_type
-    """)
+    # 说明：road_factor 使用 when 链实现（避免 streaming SQL 的解析/分组坑）
+    base_df = (
+        parsed_df
+        .filter(col("detector_id").isNotNull() & col("timestamp").isNotNull())
+        .filter(col("ts").isNotNull())
+        .withColumn("total_flow_i", col("total_flow").cast("int"))
+        .withColumn("avg_speed_d", col("avg_speed").cast("double"))
+        .withColumn("congestion_index_d", col("congestion_index").cast("double"))
+        .filter(col("total_flow_i").isNotNull() & (col("total_flow_i") >= 0))
+        .filter(col("avg_speed_d").isNotNull() & (col("avg_speed_d") >= 0))
+        .withColumn(
+            "road_factor",
+            when(col("road_type") == "高速", 0.8)
+            .when(col("road_type") == "快速路", 0.85)
+            .when(col("road_type") == "主干路", 1.0)
+            .when(col("road_type") == "次干路", 1.2)
+            .when(col("road_type") == "支路", 1.5)
+            .otherwise(1.0),
+        )
+    )
 
-    (congestion_df.writeStream
-        .outputMode("append")
+    agg_df = (
+        base_df
+        .groupBy("detector_id", "detector_name", "district", "road_type")
+        .agg(
+            spark_sum(col("total_flow_i")).alias("total_vehicles"),
+            round(avg(col("congestion_index_d")), 3).alias("raw_avg_congestion"),
+            round(avg(col("avg_speed_d")), 2).alias("avg_speed"),
+            avg(col("road_factor")).alias("road_factor_avg"),
+        )
+        .withColumn(
+            "calculated_congestion",
+            round(
+                least(
+                    col("total_vehicles") / 200.0
+                    * col("road_factor_avg")
+                    * (0.5 + (1 - (col("avg_speed") / 80.0)) * 0.5),
+                    lit(1.0),
+                ),
+                3,
+            ),
+        )
+        .withColumn("update_time", current_timestamp())
+        .drop("road_factor_avg")
+    )
+
+    (agg_df.writeStream
+        .outputMode("update")
         .trigger(processingTime="30 seconds")
-        .foreachBatch(foreach_batch_mysql(
-            "congestion_index",
-            primary_keys=["detector_id"],
-        ))
+        .foreachBatch(
+            foreach_batch_mysql(
+                "congestion_index",
+                primary_keys=["detector_id"],
+            )
+        )
         .option("checkpointLocation", SPARK_CHECKPOINT_DIR + "/basic/congestion_index")
         .start())
 

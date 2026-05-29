@@ -42,16 +42,26 @@ def generate_record(detector: dict) -> dict:
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # 约 15% 概率注入异常数据
+    # 异常类型：
+    # - 主键/时间缺失：用于验证“关键字段缺失丢弃”
+    # - 数值字段为字符串：用于验证“数值无法解析丢弃”
+    # - 数值超范围：用于验证“夹逼/修正”策略是否生效
     if random.random() < 0.15:
-        anomaly = random.randint(0, 3)
+        anomaly = random.randint(0, 6)
         if anomaly == 0:
             detector_id_val = ""           # detector_id 为空字符串
         elif anomaly == 1:
             timestamp = ""                 # timestamp 为空字符串
         elif anomaly == 2:
             detector_id_val = None         # detector_id 为 None
+        elif anomaly == 3:
+            timestamp = None               # timestamp 为 None
+        elif anomaly == 4:
+            avg_speed = "NaN"              # 数值字段为字符串（无法解析）
+        elif anomaly == 5:
+            occupancy = 500                # 超范围：应被清洗夹逼到 100
         else:
-            timestamp = None              # timestamp 为 None
+            congestion_index = 2           # 超范围：应被清洗夹逼到 1
     else:
         detector_id_val = detector["detector_id"]
 
